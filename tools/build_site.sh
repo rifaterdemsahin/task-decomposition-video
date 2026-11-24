@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
-# Assemble the GitHub Pages site in site/ and publish it to the gh-pages branch.
+# Assemble the GitHub Pages site in site/ and publish it.
 #   site/index.html is the landing page (kept in git on main).
 #   kanban.html / effort.html are artifact pages written without <!doctype>/<head>
 #   (the artifact host adds those); here they get a proper document wrapper.
 # usage: tools/build_site.sh            build only
-#        tools/build_site.sh --publish  build, commit site/ on main, push site/ to gh-pages
+#        tools/build_site.sh --publish  build, commit site/ and push main; the Pages workflow
+#                                       (.github/workflows/static.yml) deploys site/ and tests it live
 set -euo pipefail
 cd "$(dirname "$0")/.."
 OUT=video/out
@@ -24,6 +25,6 @@ echo "site/ ready: $(ls site | tr '\n' ' ')"
 if [ "${1:-}" = "--publish" ]; then
   git add site
   git commit -q -m "Update GitHub Pages site" || true
-  git push -q origin "$(git subtree split --prefix site HEAD)":refs/heads/gh-pages --force
-  echo "pushed site/ to gh-pages"
+  git push -q origin HEAD:main
+  echo "pushed main; GitHub Actions deploys site/ to Pages"
 fi

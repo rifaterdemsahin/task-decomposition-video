@@ -79,7 +79,11 @@ tools/build_site.sh --publish
 ```
 
 Copies the video, captions (SRT + VTT), QA report, board and effort pages into `site/`, commits
-it on `main`, and pushes `site/` to the `gh-pages` branch, which GitHub Pages serves.
+it and pushes `main`. The workflow in `.github/workflows/static.yml` deploys `site/` to GitHub
+Pages, then runs `tests/test_site.py` against the live URL.
+
+Test locally: `.venv/bin/python -m unittest tests.test_site` (set
+`SITE_URL=https://rifaterdemsahin.github.io/task-decomposition-video/` to add the live checks).
 
 ## Edit the lesson
 
