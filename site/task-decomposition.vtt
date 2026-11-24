@@ -1,363 +1,409 @@
 WEBVTT
 
-00:00.000 --> 00:00.721
+00:00.000 --> 00:00.811
 One prompt.
 
-00:00.721 --> 00:01.835
+00:01.488 --> 00:02.570
 Five hidden jobs.
 
-00:01.835 --> 00:03.800
+00:03.237 --> 00:04.567
 And an answer you can't check.
 
-00:03.800 --> 00:08.976
+00:05.183 --> 00:07.610
 That's what happens when you ask Claude to
-analyse a quarter of market data and
 
-00:08.976 --> 00:11.204
-propose strategies, all in one go.
+00:07.610 --> 00:10.152
+analyse a quarter of market data and propose
 
-00:11.804 --> 00:13.364
+00:10.152 --> 00:11.654
+strategies, all in one go.
+
+00:12.254 --> 00:13.308
 Here's where we're heading:
 
-00:13.364 --> 00:16.657
-the same request as five small
-steps, each one checkable.
+00:13.963 --> 00:16.667
+the same request as five small steps, each one
 
-00:16.657 --> 00:21.394
+00:16.667 --> 00:17.255
+checkable.
+
+00:17.849 --> 00:20.290
 By the end of this lesson, you'll be able to
-break any big business request into a
 
-00:21.394 --> 00:25.033
-chain of steps that Claude gets
-right, and that you can verify.
+00:20.290 --> 00:22.842
+break any big business request into a chain of
 
-00:25.633 --> 00:26.580
+00:22.842 --> 00:25.395
+steps that Claude gets right, and that you can
+
+00:25.395 --> 00:25.783
+verify.
+
+00:26.383 --> 00:27.119
 Chapter one.
 
-00:26.580 --> 00:28.237
+00:27.836 --> 00:29.137
 Spot the hidden jobs.
 
-00:28.837 --> 00:31.239
+00:29.737 --> 00:31.539
 Here's a prompt many of us have typed:
 
-00:31.239 --> 00:34.715
-analyse our Q3 market data and
-propose five strategies.
+00:32.162 --> 00:35.180
+analyse our Q3 market data and propose five
 
-00:34.715 --> 00:38.444
-It looks like one request, but it
-hides at least five jobs:
+00:35.180 --> 00:35.952
+strategies.
 
-00:38.444 --> 00:43.626
+00:36.514 --> 00:38.845
+It looks like one request, but it hides at
+
+00:38.845 --> 00:39.733
+least five jobs:
+
+00:40.315 --> 00:42.798
 read the data, spot the trends, explain the
+
+00:42.798 --> 00:44.992
 causes, generate ideas, and rank them.
 
-00:43.626 --> 00:47.734
-Asked in one breath, the model has to
-juggle all of them at once.
+00:45.574 --> 00:48.076
+Asked in one breath, the model has to juggle
 
-00:47.734 --> 00:53.043
-The usual result is generic strategies, skipped
-steps, or numbers that were never in
+00:48.076 --> 00:49.213
+all of them at once.
 
-00:53.043 --> 00:53.612
+00:49.788 --> 00:52.108
+The usual result is generic strategies,
+
+00:52.108 --> 00:54.727
+skipped steps, or numbers that were never in
+
+00:54.727 --> 00:55.262
 the data.
 
-00:54.212 --> 00:59.032
+00:55.862 --> 00:58.093
 Chain of thought means asking the model to
-write out its reasoning before it gives
 
-00:59.032 --> 00:59.679
-the answer.
+00:58.093 --> 01:00.376
+write out its reasoning before it gives the
 
-00:59.679 --> 01:04.617
-Each step is on the page, so later steps can
-build on earlier ones, and you can read
-
-01:04.617 --> 01:07.497
-the reasoning to see exactly
-where it went wrong.
-
-01:07.497 --> 01:12.259
-Same model, same data, but more of the work
-happens out loud, which usually means
-
-01:12.259 --> 01:14.375
-fewer errors on multi-step problems.
-
-01:14.975 --> 01:17.374
-Task decomposition works one level up.
-
-01:17.374 --> 01:22.488
-Instead of one prompt doing everything, you
-break the project into small, ordered
-
-01:22.488 --> 01:23.119
-sub-tasks.
-
-01:23.119 --> 01:26.970
-Each one has a clear input, a
-single job, and a clear output.
-
-01:26.970 --> 01:30.379
-Chain of thought improves the
-reasoning inside a step.
-
-01:30.379 --> 01:33.599
-Decomposition improves the
-structure between steps.
-
-01:33.599 --> 01:34.672
-You'll want both.
-
-01:35.272 --> 01:35.901
-Takeaway:
-
-01:35.901 --> 01:40.095
-if a request hides several jobs,
-give each job its own step.
-
-01:40.695 --> 01:41.605
-Chapter two.
-
-01:41.605 --> 01:43.576
-Turn one prompt into five.
-
-01:44.176 --> 01:45.826
-Here's the before version:
-
-01:45.826 --> 01:50.204
-one prompt, the Q3 data pasted in, and
-a request for five strategies.
-
-01:50.204 --> 01:51.536
-You do get an answer.
-
-01:51.536 --> 01:56.802
-But you can't tell which numbers came from the
-data, why these five were chosen, or
-
-01:56.802 --> 01:58.452
-where the reasoning broke.
-
-01:59.052 --> 02:00.633
-Now the after version.
-
-02:00.633 --> 02:01.280
-Step one:
-
-02:01.280 --> 02:04.946
-extract the key metrics, and
-quote the source rows.
-
-02:04.946 --> 02:05.593
-Step two:
-
-02:05.593 --> 02:07.750
-find the three biggest trends.
-
-02:07.750 --> 02:08.540
-Step three:
-
-02:08.540 --> 02:11.344
-explain the likely cause of each trend.
-
-02:11.344 --> 02:12.062
-Step four:
-
-02:12.062 --> 02:15.872
-brainstorm ten strategy options
-tied to those causes.
-
-02:15.872 --> 02:16.591
-Step five:
-
-02:16.591 --> 02:20.616
-score them on impact and effort,
-and pick the best five.
-
-02:20.616 --> 02:23.707
-Every output becomes the
-next step's input.
-
-02:24.307 --> 02:25.371
-Phrasing matters.
-
-02:25.371 --> 02:27.000
-Plain, think step by step, helps a little.
-
-02:27.000 --> 02:30.065
-Better is to spell out the steps:
-
-02:30.065 --> 02:32.945
-first do this, then that,
-then the next thing.
-
-02:32.945 --> 02:34.760
-Best for review is structure.
-
-02:34.760 --> 02:39.767
-Ask Claude to put its reasoning inside
-thinking tags and the final result inside
-
-02:39.767 --> 02:40.518
-answer tags.
-
-02:40.518 --> 02:45.338
-Now you can read the work, and your code or
-a colleague can pull out just the
-
-02:45.338 --> 02:45.776
+01:00.376 --> 01:00.748
 answer.
 
-02:46.376 --> 02:51.287
+01:01.341 --> 01:03.724
+Each step is on the page, so later steps can
+
+01:03.724 --> 01:06.052
+build on earlier ones, and you can read the
+
+01:06.052 --> 01:08.489
+reasoning to see exactly where it went wrong.
+
+01:09.059 --> 01:11.752
+Same model, same data, but more of the work
+
+01:11.752 --> 01:14.446
+happens out loud, which usually means fewer
+
+01:14.446 --> 01:16.325
+errors on multi-step problems.
+
+01:16.925 --> 01:19.133
+Task decomposition works one level up.
+
+01:19.714 --> 01:22.169
+Instead of one prompt doing everything, you
+
+01:22.169 --> 01:24.281
+break the project into small, ordered
+
+01:24.281 --> 01:24.852
+sub-tasks.
+
+01:25.421 --> 01:28.005
+Each one has a clear input, a single job, and
+
+01:28.005 --> 01:28.867
+a clear output.
+
+01:29.434 --> 01:31.934
+Chain of thought improves the reasoning inside
+
+01:31.934 --> 01:32.314
+a step.
+
+01:32.941 --> 01:35.520
+Decomposition improves the structure between
+
+01:35.520 --> 01:35.872
+steps.
+
+01:36.424 --> 01:37.372
+You'll want both.
+
+01:37.972 --> 01:38.586
+Takeaway:
+
+01:39.327 --> 01:42.148
+if a request hides several jobs, give each job
+
+01:42.148 --> 01:42.945
+its own step.
+
+01:43.545 --> 01:44.318
+Chapter two.
+
+01:45.003 --> 01:46.576
+Turn one prompt into five.
+
+01:47.176 --> 01:48.408
+Here's the before version:
+
+01:49.053 --> 01:51.764
+one prompt, the Q3 data pasted in, and a
+
+01:51.764 --> 01:53.661
+request for five strategies.
+
+01:54.253 --> 01:55.253
+You do get an answer.
+
+01:55.908 --> 01:58.461
+But you can't tell which numbers came from the
+
+01:58.461 --> 02:01.014
+data, why these five were chosen, or where the
+
+02:01.014 --> 02:01.902
+reasoning broke.
+
+02:02.502 --> 02:03.712
+Now the after version.
+
+02:04.353 --> 02:04.976
+Step one:
+
+02:05.672 --> 02:08.011
+extract the key metrics, and quote the source
+
+02:08.011 --> 02:08.271
+rows.
+
+02:08.847 --> 02:09.530
+Step two:
+
+02:10.247 --> 02:11.719
+find the three biggest trends.
+
+02:12.292 --> 02:12.997
+Step three:
+
+02:13.676 --> 02:15.667
+explain the likely cause of each trend.
+
+02:16.284 --> 02:16.977
+Step four:
+
+02:17.685 --> 02:20.446
+brainstorm ten strategy options tied to those
+
+02:20.446 --> 02:20.876
+causes.
+
+02:21.444 --> 02:22.173
+Step five:
+
+02:22.842 --> 02:25.326
+score them on impact and effort, and pick the
+
+02:25.326 --> 02:25.878
+best five.
+
+02:26.456 --> 02:28.807
+Every output becomes the next step's input.
+
+02:29.407 --> 02:30.450
+Phrasing matters.
+
+02:31.101 --> 02:33.361
+Plain, think step by step, helps a little.
+
+02:33.980 --> 02:35.559
+Better is to spell out the steps:
+
+02:36.201 --> 02:38.337
+first do this, then that, then the next thing.
+
+02:39.031 --> 02:40.380
+Best for review is structure.
+
+02:41.049 --> 02:43.484
+Ask Claude to put its reasoning inside
+
+02:43.484 --> 02:46.112
+thinking tags and the final result inside
+
+02:46.112 --> 02:46.881
+answer tags.
+
+02:47.444 --> 02:49.765
+Now you can read the work, and your code or a
+
+02:49.765 --> 02:51.776
+colleague can pull out just the answer.
+
+02:52.376 --> 02:54.971
 For bigger projects, run each step as its own
+
+02:54.971 --> 02:56.989
 prompt and pass the output forward.
 
-02:51.287 --> 02:53.105
+02:57.603 --> 02:58.870
 That's called prompt chaining.
 
-02:53.105 --> 02:58.198
+02:59.501 --> 03:02.138
 Between steps you can check the result, fix a
+
+03:02.138 --> 03:04.365
 mistake early, or rerun just one step.
 
-02:58.198 --> 03:03.169
+03:04.931 --> 03:07.420
 If step two found the wrong trends, you fix
+
+03:07.420 --> 03:09.619
 step two, not the whole strategy deck.
 
-03:03.769 --> 03:04.328
+03:10.219 --> 03:10.833
 Takeaway:
 
-03:04.328 --> 03:09.232
+03:11.599 --> 03:13.878
 make the reasoning visible, and check each
+
+03:13.878 --> 03:15.832
 output before the next step uses it.
 
-03:09.832 --> 03:10.886
+03:16.432 --> 03:17.243
 Chapter three.
 
-03:10.886 --> 03:12.543
+03:17.936 --> 03:19.293
 Decompose it yourself.
 
-03:13.143 --> 03:14.399
+03:19.893 --> 03:20.981
 Pause the video now.
 
-03:14.399 --> 03:15.340
+03:21.618 --> 03:22.576
 Take this task:
 
-03:15.340 --> 03:18.228
-plan the launch of a new
-product next quarter.
+03:23.225 --> 03:25.368
+plan the launch of a new product next quarter.
 
-03:18.228 --> 03:19.986
+03:26.026 --> 03:27.560
 Write four to six sub-tasks.
 
-03:19.986 --> 03:25.197
+03:28.180 --> 03:30.737
 For each one, note its input, its output, and
+
+03:30.737 --> 03:32.840
 how you'd check that output is right.
 
-03:25.197 --> 03:29.781
+03:33.428 --> 03:35.702
 Then write the prompt for step one, using
+
+03:35.702 --> 03:37.422
 explicit step-by-step phrasing.
 
-03:29.781 --> 03:32.543
-Give yourself five minutes,
-then press play.
+03:38.016 --> 03:40.193
+Give yourself five minutes, then press play.
 
-03:33.143 --> 03:34.780
+03:40.793 --> 03:42.312
 Here's one possible answer.
 
-03:34.780 --> 03:37.206
+03:42.975 --> 03:44.819
 Define the audience and the launch goal.
 
-03:37.206 --> 03:38.480
+03:45.473 --> 03:46.619
 Scan the competitors.
 
-03:38.480 --> 03:41.027
+03:47.244 --> 03:49.280
 Write the positioning and the key message.
 
-03:41.027 --> 03:43.271
+03:49.849 --> 03:51.596
 Choose channels and split the budget.
 
-03:43.271 --> 03:45.879
-Then build the timeline
-and list the risks.
+03:52.246 --> 03:54.346
+Then build the timeline and list the risks.
 
-03:45.879 --> 03:48.426
+03:54.903 --> 03:56.976
 Yours may look different, and that's fine.
 
-03:49.025 --> 03:49.663
+03:57.575 --> 03:58.189
 Takeaway:
 
-03:49.663 --> 03:53.421
-every step gets one job, and an
-output you can check.
+03:58.938 --> 04:01.754
+every step gets one job, and an output you can
 
-03:54.021 --> 03:55.030
+04:01.754 --> 04:02.121
+check.
+
+04:02.721 --> 04:03.512
 Chapter four.
 
-03:55.030 --> 03:56.582
+04:04.239 --> 04:05.432
 Know when to use it.
 
-03:57.183 --> 04:02.273
+04:06.033 --> 04:08.736
 Decompose when the task has several stages,
+
+04:08.736 --> 04:11.061
 involves numbers, drives an important
 
-04:02.273 --> 04:05.729
-decision, or when someone needs
-to audit the reasoning.
+04:11.061 --> 04:13.826
+decision, or when someone needs to audit the
 
-04:05.729 --> 04:10.944
+04:13.826 --> 04:14.455
+reasoning.
+
+04:15.038 --> 04:17.694
 Keep it to one prompt for simple lookups and
-quick rewrites, where extra steps only
 
-04:10.944 --> 04:12.075
-add time and cost.
+04:17.694 --> 04:20.230
+quick rewrites, where extra steps only add
 
-04:12.675 --> 04:13.303
+04:20.230 --> 04:21.075
+time and cost.
+
+04:21.675 --> 04:22.289
 Takeaway:
 
-04:13.303 --> 04:17.137
-decompose when the work has
-stages, numbers, or stakes.
+04:23.067 --> 04:25.639
+decompose when the work has stages, numbers,
 
-04:17.137 --> 04:18.950
+04:25.639 --> 04:26.223
+or stakes.
+
+04:26.834 --> 04:28.250
 Otherwise, keep it simple.
 
-04:19.550 --> 04:20.456
+04:28.850 --> 04:29.675
 Let's recap.
 
-04:20.456 --> 04:22.495
+04:30.372 --> 04:31.945
 Big prompts hide many jobs.
 
-04:23.095 --> 04:26.551
-Chain of thought and explicit
-phrasing make the steps visible.
+04:32.545 --> 04:34.981
+Chain of thought and explicit phrasing make
 
-04:27.151 --> 04:31.311
-Each step gets one job, a clear input,
-and an output you can check.
+04:34.981 --> 04:36.001
+the steps visible.
 
-04:31.911 --> 04:36.284
+04:36.601 --> 04:39.437
+Each step gets one job, a clear input, and an
+
+04:39.437 --> 04:40.761
+output you can check.
+
+04:41.361 --> 04:43.455
 And you decompose when the work is
+
+04:43.455 --> 04:45.734
 multi-stage, numeric, or high-stakes.
-
-04:36.884 --> 04:38.051
-Your practice task:
-
-04:38.051 --> 04:42.905
-this week, take one real request you'd
-normally send Claude as a single prompt.
-
-04:42.905 --> 04:47.942
-Run it once as it is, then again as a chain of
-steps with the reasoning shown, and
-
-04:47.942 --> 04:49.171
-compare the answers.
-
-04:49.171 --> 04:52.980
-Post your step list, and what
-changed, in the Skool community.
-
-04:52.980 --> 04:54.639
-See you in the next lesson.

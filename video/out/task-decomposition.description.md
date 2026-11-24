@@ -2,12 +2,13 @@ After this, the viewer can break a big business request into a chain of checkabl
 
 Chapters
 0:00 Why one big prompt fails
-0:25 Spot the hidden jobs
-1:40 Turn one prompt into five
-3:09 Decompose a task yourself
-3:54 Know when to decompose
-4:19 Recap and practice
+0:26 Spot the hidden jobs
+1:43 Turn one prompt into five
+3:16 Decompose a task yourself
+4:02 Know when to decompose
+4:28 Recap and practice
 
-Made locally with simpligen: narration by Kokoro-82M (af_heart, kokoro-onnx int8 on CPU),
-slides drawn with Pillow, diagrams as SVG, background art generated procedurally on CPU.
+Made locally: narration by Kokoro-82M (af_heart, kokoro-onnx int8 on CPU),
+slides drawn with Pillow, UML diagrams as SVG, background art generated procedurally on CPU.
+Captions are burned in; the SRT is included for platforms that want a caption track.
 No music used.

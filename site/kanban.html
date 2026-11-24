@@ -101,9 +101,10 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
     <h1>Task Decomposition video: production board</h1>
     <p class="lead">Narrated lesson built fully locally with simpligen, Kokoro voice on CPU, and the edu-film-edit skill. What is done, what is running, what is blocked, and what needs a decision.</p>
     <div class="facts">
-      <span class="fact">video <b>4:55</b></span>
+      <span class="fact">video <b>5:07</b></span>
       <span class="fact">scenes <b>25</b></span>
-      <span class="fact">QA <b>6/7</b> pass</span>
+      <span class="fact">QA <b>7/7</b> pass</span>
+      <span class="fact"><b>164.9</b> words/min</span>
       <span class="fact"><b>−14.0</b> LUFS</span>
       <span class="fact">tests <b>17/17</b> pass</span>
       <span class="fact">disk free <b>1.3 GB</b> (94% used)</span>
@@ -112,7 +113,11 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
   <div class="board">
     <div class="lane done">
-      <div class="lane-head"><h2>Done</h2><span class="count">14</span></div>
+      <div class="lane-head"><h2>Done</h2><span class="count">18</span></div>
+      <article class="card"><h3>Version 3 video</h3><p>UML class, activity and sequence diagrams with colour emoji; small burned-in captions that fill word by word; animated assignment; no tool footer. QA 7/7.</p></article>
+      <article class="card"><h3>Reusable skill</h3><p><code>skool-course-video-creator</code> with a lesson template and a scaffold script, tested on a new lesson. <a href="skill.html">Skill page</a>.</p></article>
+      <article class="card"><h3>Mac FLUX one-liner</h3><p><code>tools/mac_flux.sh</code> and its <a href="mac-flux.html">page</a>; build keeps FLUX images.</p></article>
+      <article class="card"><h3>Pages deploy fixed for good</h3><p><code>upload-pages-artifact</code> v3 → v5 to match <code>deploy-pages</code> v5; intermittent artifact errors gone.</p></article>
       <article class="card"><h3>Final video rendered</h3><p>4 min 55 s, 6 chapters, 105 caption cues. Loudness −14.0 LUFS, peak −1.4 dBFS, no flashes. <a href="https://rifaterdemsahin.github.io/task-decomposition-video/">Watch it</a>.</p></article>
       <article class="card"><h3>GitHub Pages live</h3><p>gh logged in from Azure Key Vault. The Actions workflow now deploys <code>site/</code> (it uploaded the repo root, hence the 404) and a verify job tests the live URL. Links in the README.</p></article>
       <article class="card"><h3>Effort report</h3><p>Run sheet and measured effort. <a href="effort.html">Open the report</a>.</p></article>
@@ -130,13 +135,12 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
     </div>
 
     <div class="lane doing">
-      <div class="lane-head"><h2>In progress</h2><span class="count">1</span></div>
-      <article class="card"><h3>Pace 0.6 over target</h3><p>170.6 words/min against 140–170. Next build: <code>KOKORO_PAUSE=0.5</code>, about 10 minutes.</p><span class="tag">next build</span></article>
+      <div class="lane-head"><h2>In progress</h2><span class="count">0</span></div>
     </div>
 
     <div class="lane blocked">
       <div class="lane-head"><h2>Blocked</h2><span class="count">4</span></div>
-      <article class="card"><h3>FLUX.2 Klein images</h3><p>mflux needs Apple Silicon; this VM has no GPU, 8 GB RAM and 1.3 GB free disk (model ≈ 15 GB).</p><span class="tag">hardware</span></article>
+      <article class="card"><h3>FLUX.2 Klein images</h3><p>mflux needs Apple Silicon; this VM has no GPU, 8 GB RAM and 1.4 GB free disk (model ≈ 15 GB). Waiting on the Mac one-liner.</p><span class="tag">your Mac</span></article>
       <article class="card"><h3>Ollama prompt writer</h3><p>No Ollama on localhost; scanning the LAN for one was denied by the permission check.</p><span class="tag">access</span></article>
       <article class="card"><h3>travel-film-edit scripts</h3><p><code>film_edit.py</code>, <code>film_titles.py</code> and the LUTs are not on this machine. Equivalent steps implemented in <code>edu_finish.py</code>.</p><span class="tag">missing repo</span></article>
       <article class="card"><h3>Music bed</h3><p>No licence-safe track provided. The skill allows none, so the lesson ships voice only.</p><span class="tag">asset</span></article>

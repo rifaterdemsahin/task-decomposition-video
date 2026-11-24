@@ -97,7 +97,11 @@ def caption_cues(timeline: list) -> list[tuple[float, float, str]]:
         for a, b in CAPTION_FIXES.items():
             text = text.replace(a, b)
         sentences = [s for s in SENTENCE.split(text.strip()) if s]
-        segs = sc.get("speech") or []
+        segs = [list(s) for s in (sc.get("speech") or [])]
+        # commas can add extra pauses: merge the shortest gaps until one segment per sentence
+        while len(segs) > len(sentences) > 0:
+            k = min(range(len(segs) - 1), key=lambda j: segs[j + 1][0] - segs[j][1])
+            segs[k:k + 2] = [[segs[k][0], segs[k + 1][1]]]
         if len(segs) == len(sentences):
             spans = [(sc["start"] + s, sc["start"] + e) for s, e in segs]
         else:  # fallback: share the spoken time by sentence length
@@ -235,7 +239,7 @@ def main(scene_file: str, raw: str, final: str) -> None:
         "No music used."]
     Path(f"{stem}.description.md").write_text("\n".join(desc) + "\n")
     report = qa(final_p, timeline, out_dir) | {"audio": audio, "srt_cues": n_cues,
-               "sentence_timing": sum(len(sc.get("speech") or []) == len(
+               "sentence_timing": sum(len(sc.get("speech") or []) >= len(
                    [s for s in SENTENCE.split(sc["narration"].strip()) if s]) for sc in timeline)}
     Path(f"{stem}.qa.json").write_text(json.dumps(report, indent=2) + "\n")
     print(json.dumps(report, indent=2))

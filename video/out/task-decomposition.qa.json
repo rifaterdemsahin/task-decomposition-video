@@ -1,42 +1,42 @@
 {
   "lufs": -14.0,
-  "sample_peak_dbfs": -1.4,
+  "sample_peak_dbfs": -1.2,
   "max_flashes_per_sec": 0,
-  "words": 797,
-  "speaking_seconds": 280.2,
-  "wpm": 170.6,
-  "video_seconds": 295.24,
-  "hook_seconds": 25.63,
+  "words": 803,
+  "speaking_seconds": 292.2,
+  "wpm": 164.9,
+  "video_seconds": 307.23,
+  "hook_seconds": 26.38,
   "chapters": [
     {
       "at": "0:00",
       "name": "Why one big prompt fails",
-      "seconds": 25.6
+      "seconds": 26.4
     },
     {
-      "at": "0:25",
+      "at": "0:26",
       "name": "Spot the hidden jobs",
-      "seconds": 75.1
+      "seconds": 77.2
     },
     {
-      "at": "1:40",
+      "at": "1:43",
       "name": "Turn one prompt into five",
-      "seconds": 89.1
+      "seconds": 92.9
     },
     {
-      "at": "3:09",
+      "at": "3:16",
       "name": "Decompose a task yourself",
-      "seconds": 44.2
+      "seconds": 46.3
     },
     {
-      "at": "3:54",
+      "at": "4:02",
       "name": "Know when to decompose",
-      "seconds": 25.5
+      "seconds": 26.1
     },
     {
-      "at": "4:19",
+      "at": "4:28",
       "name": "Recap and practice",
-      "seconds": 35.7
+      "seconds": 38.4
     }
   ],
   "color_p2_p98": "n/a (no presenter footage)",
@@ -44,17 +44,18 @@
     "lufs_in_window": true,
     "sample_peak_ok": true,
     "max_flashes_per_sec_ok": true,
-    "wpm_in_140_170": false,
+    "wpm_in_140_170": true,
     "chapters_ok": true,
     "hook_le_30s": true,
     "one_cta_at_end": true
   },
-  "pass": false,
+  "pass": true,
   "audio": {
     "measured_before": {
-      "lufs": -18.39,
-      "true_peak": -0.2
+      "lufs": -18.38,
+      "true_peak": -0.21
     }
   },
-  "srt_cues": 105
+  "srt_cues": 136,
+  "sentence_timing": 25
 }

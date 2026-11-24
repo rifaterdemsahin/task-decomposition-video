@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Build the Task Decomposition lesson end to end, fully local (Linux, CPU only).
+# Build this lesson video end to end, fully local (Linux, CPU only).
 # 1) Kokoro TTS server  2) diagrams  3) background art  4) render  5) edu-film-edit finish + QA
 set -euo pipefail
 cd "$(dirname "$0")"
