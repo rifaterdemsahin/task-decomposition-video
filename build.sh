@@ -5,7 +5,9 @@ set -euo pipefail
 cd "$(dirname "$0")"
 PY=.venv/bin/python
 if [ ! -x "$PY" ]; then
-  python3 -m venv .venv && $PY -m pip install -q kokoro-onnx soundfile pillow
+  # kokoro-onnx has no wheels for the newest Python (macOS Homebrew ships 3.15); prefer 3.12
+  BASE=$(command -v python3.12 || command -v python3)
+  "$BASE" -m venv .venv && $PY -m pip install -q kokoro-onnx soundfile pillow
 fi
 if [ ! -f models/kokoro/kokoro-v1.0.int8.onnx ]; then
   mkdir -p models/kokoro

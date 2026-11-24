@@ -1,0 +1,82 @@
+[
+  {
+    "scene": 1,
+    "title": "Task Decomposition",
+    "prompt": "Complex clockwork mechanism, gears interlocking, subtly shifting. Dim, warm brass lighting casts long shadows; a single, fractured lens reflects distorted data streams. cinematic, wide 16:9 composition, soft volumetric light, rich colour, clean minimal background, no text, no letters, no logos",
+    "llm": "gemma3:12b",
+    "llm_seconds": 8.1,
+    "model": "FLUX.2 Klein 4B (mflux, 8-bit)",
+    "image_seconds": 37.3,
+    "file": "01.png"
+  },
+  {
+    "scene": 3,
+    "title": "Spot the hidden jobs",
+    "prompt": "Sun-drenched, overgrown Victorian garden. Stone statues peek from ivy, a weathered wheelbarrow spills tools, and a single, vibrant sunflower blooms unusually tall. Warm, hazy light. cinematic, wide 16:9 composition, soft volumetric light, rich colour, clean minimal background, no text, no letters, no logos",
+    "llm": "gemma3:12b",
+    "llm_seconds": 1.8,
+    "model": "FLUX.2 Klein 4B (mflux, 8-bit)",
+    "image_seconds": 33.8,
+    "file": "03.png"
+  },
+  {
+    "scene": 4,
+    "title": "One giant prompt",
+    "prompt": "A complex clockwork mechanism, gears spinning erratically, tangled with data streams of light. Dim, warm lighting highlights the chaos, casting long shadows. cinematic, wide 16:9 composition, soft volumetric light, rich colour, clean minimal background, no text, no letters, no logos",
+    "llm": "gemma3:12b",
+    "llm_seconds": 1.8,
+    "model": "FLUX.2 Klein 4B (mflux, 8-bit)",
+    "image_seconds": 34.8,
+    "file": "04.png"
+  },
+  {
+    "scene": 5,
+    "title": "Chain of Thought",
+    "prompt": "Interconnected, glowing orbs of varying sizes float in a dark, cavernous space. Soft, blue light emanates from each orb, subtly illuminating the rough stone walls. cinematic, wide 16:9 composition, soft volumetric light, rich colour, clean minimal background, no text, no letters, no logos",
+    "llm": "gemma3:12b",
+    "llm_seconds": 2.1,
+    "model": "FLUX.2 Klein 4B (mflux, 8-bit)",
+    "image_seconds": 34.9,
+    "file": "05.png"
+  },
+  {
+    "scene": 8,
+    "title": "Turn one prompt into five",
+    "prompt": "A single, vibrant seed bursts open, scattering five glowing, miniature seedlings across dark, fertile soil, illuminated by a soft, ethereal spotlight. cinematic, wide 16:9 composition, soft volumetric light, rich colour, clean minimal background, no text, no letters, no logos",
+    "llm": "gemma3:12b",
+    "llm_seconds": 1.7,
+    "model": "FLUX.2 Klein 4B (mflux, 8-bit)",
+    "image_seconds": 36.9,
+    "file": "08.png"
+  },
+  {
+    "scene": 14,
+    "title": "Decompose it yourself",
+    "prompt": "Overhead shot, antique wooden workbench strewn with clockwork gears, springs, and tools. Soft, diffused sunlight through a dusty window illuminates the scene. Warm, earthy tones. cinematic, wide 16:9 composition, soft volumetric light, rich colour, clean minimal background, no text, no letters, no logos",
+    "llm": "gemma3:12b",
+    "llm_seconds": 1.9,
+    "model": "FLUX.2 Klein 4B (mflux, 8-bit)",
+    "image_seconds": 36.5,
+    "file": "14.png"
+  },
+  {
+    "scene": 18,
+    "title": "Know when to use it",
+    "prompt": "A weathered wooden toolbox, slightly ajar, sits on a sun-drenched porch. Tools – hammer, wrench, screwdriver – rest within, bathed in warm, golden afternoon light. cinematic, wide 16:9 composition, soft volumetric light, rich colour, clean minimal background, no text, no letters, no logos",
+    "llm": "gemma3:12b",
+    "llm_seconds": 2.0,
+    "model": "FLUX.2 Klein 4B (mflux, 8-bit)",
+    "image_seconds": 37.6,
+    "file": "18.png"
+  },
+  {
+    "scene": 25,
+    "title": "Your assignment",
+    "prompt": "Sunlit desk, scattered papers, a half-finished coffee cup, and a vintage typewriter with a single sheet of paper peeking out. Warm, inviting light. cinematic, wide 16:9 composition, soft volumetric light, rich colour, clean minimal background, no text, no letters, no logos",
+    "llm": "gemma3:12b",
+    "llm_seconds": 2.1,
+    "model": "FLUX.2 Klein 4B (mflux, 8-bit)",
+    "image_seconds": 38.8,
+    "file": "25.png"
+  }
+]

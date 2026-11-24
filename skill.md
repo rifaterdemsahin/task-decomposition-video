@@ -148,4 +148,4 @@ pip install numpy opencv-python librosa soundfile pyloudnorm pillow
 
 ### Without travel-film-edit (this repo)
 
-For narrated slide lessons with no presenter footage, this repo implements the same rules on top of simpligen: `tools/edu_finish.py` applies the voice chain and room-tone bed, writes the SRT, YouTube chapters and description, and runs the QA checks above (LUFS, peak, flashes, words per minute). See the README for the full pipeline.
+For narrated slide lessons with no presenter footage, this repo implements the same rules on top of simpligen: `tools/edu_finish.py` applies the voice chain and room-tone bed, writes the SRT, YouTube chapters and description, and runs the QA checks above (LUFS, peak, flashes, words per minute). See the README for the full pipeline. Burning the captions needs an ffmpeg with libass; on macOS that is `brew install ffmpeg-full` (`edu_finish.py` picks it up, or set `FFMPEG`).

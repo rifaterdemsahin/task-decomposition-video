@@ -18,7 +18,9 @@ usage: python3 tools/edu_finish.py video/task-decomposition.json video/out/task-
 from __future__ import annotations
 
 import json
+import os
 import re
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -27,8 +29,19 @@ LUFS_TARGET, TP_TARGET = -14.0, -1.5
 ROOM_TONE_DB = -62  # pink noise level under everything
 
 
+def _ffmpeg() -> str:
+    """The caption burn needs libass. macOS Homebrew's plain `ffmpeg` has none; `ffmpeg-full` (keg-only) does."""
+    for c in (os.environ.get("FFMPEG"), "/opt/homebrew/opt/ffmpeg-full/bin/ffmpeg", "/usr/local/opt/ffmpeg-full/bin/ffmpeg"):
+        if c and Path(c).exists():
+            return c
+    return shutil.which("ffmpeg") or "ffmpeg"
+
+
+FFMPEG = _ffmpeg()
+
+
 def ff(*args: str, capture: bool = False) -> str:
-    r = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-y", *args],
+    r = subprocess.run([FFMPEG, "-hide_banner", "-nostats", "-y", *args],
                        capture_output=True, text=True)
     if r.returncode != 0:
         raise RuntimeError(r.stderr[-2000:])
@@ -218,6 +231,12 @@ def qa(video: Path, timeline: list, out_dir: Path) -> dict:
             "checks": checks, "pass": all(checks.values())}
 
 
+def art_credit(scene_file: Path) -> str:
+    if (scene_file.parent / "images" / "prompts.json").exists():
+        return "background images by FLUX.2 Klein 4B (mflux, Apple Silicon), prompts by gemma3:12b"
+    return "background art generated procedurally on CPU"
+
+
 def main(scene_file: str, raw: str, final: str) -> None:
     data = json.loads(Path(scene_file).read_text())
     raw_p, final_p = Path(raw), Path(final)
@@ -234,7 +253,7 @@ def main(scene_file: str, raw: str, final: str) -> None:
     ch = chapters(timeline)
     desc = [data.get("objective", ""), "", "Chapters"] + [f"{ts(t, False)} {n}" for t, n in ch] + [
         "", "Made locally: narration by Kokoro-82M (af_heart, kokoro-onnx int8 on CPU),",
-        "slides drawn with Pillow, UML diagrams as SVG, background art generated procedurally on CPU.",
+        "slides drawn with Pillow, UML diagrams as SVG, " + art_credit(Path(scene_file)) + ".",
         "Captions are burned in; the SRT is included for platforms that want a caption track.",
         "No music used."]
     Path(f"{stem}.description.md").write_text("\n".join(desc) + "\n")

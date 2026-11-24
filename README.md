@@ -78,9 +78,9 @@ Steps it runs:
 2. **Diagrams:** `tools/make_svgs.py` writes every SVG in `video/svg/` from data, UML included.
    Emoji in an SVG are written as `<text data-emoji="SIZE" x y>E</text>`; simpligen cuts them out
    before rsvg and draws them in colour with Pillow.
-3. **Background art:** `tools/gen_images_local.py` draws procedural "idea network" images on CPU
-   (motif per scene in `video/images/plan.json`). This box has no GPU, so FLUX via mflux
-   (`tools/gen_images.py`, Apple Silicon) is not used here.
+3. **Background art:** if `video/images/prompts.json` exists, the FLUX.2 Klein images made on a Mac
+   (`tools/gen_images.py`) are kept. Otherwise `tools/gen_images_local.py` draws procedural "idea
+   network" images on CPU (motif per scene in `video/images/plan.json`).
 4. **Render:** `python -m simpligen video/task-decomposition.json …` (hard cuts: `"fade": 0`).
 5. **Finish:** `tools/edu_finish.py` applies the edu-film-edit voice chain (highpass 75 Hz, 2.4:1
    compression, de-ess, pink-noise room tone, two-pass loudnorm to −14 LUFS), burns in small
@@ -99,7 +99,29 @@ Steps it runs:
   self-drawing ticks and a progress bar
 - per-sentence speech timing (ffmpeg `silencedetect`) stored in the timeline
 
-## FLUX images on the Mac (one-liner)
+## Build on an Apple Silicon Mac (FLUX images + render)
+
+Needs Homebrew `uv`, `ollama`, `ffmpeg-full`, `python@3.12`, `librsvg`, and mflux
+(`uv tool install mflux`). FLUX.2 Klein 4B (~15 GB) and `gemma3:12b` (~8 GB) download on first use.
+
+```bash
+git pull
+python3 tools/gen_images.py video/task-decomposition.json video/images   # 8 images, ~35 s each
+./build.sh                                                               # voice, render, captions, QA
+tools/build_site.sh --publish                                            # site/ → main → GitHub Pages
+```
+
+Mac gotchas, all hit on the first Mac build (2026-11-24):
+
+| Symptom | Fix (already in the repo) |
+|---|---|
+| `pip` can't resolve `kokoro-onnx` | Homebrew's `python3` is 3.15, too new for kokoro-onnx. `build.sh` builds `.venv` with `python3.12` when present |
+| `No option name near '…ass'` at the caption burn | Homebrew's `ffmpeg` has no libass. `brew install ffmpeg-full` (keg-only, sits alongside the plain `ffmpeg`); `edu_finish.py` uses it automatically, or set `FFMPEG=/path/to/ffmpeg` |
+| New images land as `01_1.png` and the video still shows the old art | mflux won't overwrite. `gen_images.py` now deletes the old file first |
+
+A Kokoro server already running on `:8880` is reused; otherwise `build.sh` starts one.
+
+## FLUX images only, from the Mac (one-liner)
 
 On an Apple Silicon Mac with uv and Ollama:
 

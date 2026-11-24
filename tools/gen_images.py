@@ -38,6 +38,7 @@ def llm_prompt(title: str, narration: str) -> str:
 
 
 def render(prompt: str, out: Path, seed: int) -> float:
+    out.unlink(missing_ok=True)  # mflux writes NN_1.png instead of overwriting
     t0 = time.perf_counter()
     subprocess.run(["mflux-generate-flux2", "--model", "flux2-klein-4b", "-q", "8",
                     "--seed", str(seed), "--width", "1344", "--height", "768",
