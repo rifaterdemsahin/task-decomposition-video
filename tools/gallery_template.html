@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>simpligen · AI images</title>
+<meta name="description" content="Images generated locally for simpligen v{{VERSION}}: Ollama gemma3 writes prompts, FLUX.2 Klein 4B draws them via mflux.">
+<style>
+  :root { --bg:#0b1020; --panel:#121933; --fg:#e8ecf8; --muted:#9aa6c7; --accent:#22d3ee; --accent2:#a78bfa; --warm:#fb923c; --ok:#4ade80; --line:#24305a; }
+  @media (prefers-color-scheme: light) {
+    :root { --bg:#f6f8fc; --panel:#ffffff; --fg:#0f172a; --muted:#51607f; --accent:#0891b2; --accent2:#7c3aed; --warm:#c2410c; --ok:#15803d; --line:#dbe2f0; }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif; }
+  main { max-width:1080px; margin:0 auto; padding:40px 16px 80px; }
+  .top { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; justify-content:space-between; margin-bottom:24px; }
+  .badge { display:inline-block; font:600 .85rem/1 ui-monospace, Menlo, monospace; padding:6px 10px; border-radius:999px; border:1px solid var(--accent); color:var(--accent); }
+  nav { display:flex; flex-wrap:wrap; gap:6px; }
+  nav a { font-size:.92rem; text-decoration:none; padding:6px 10px; border-radius:999px; border:1px solid var(--line); background:var(--panel); color:var(--fg); }
+  nav a:hover, nav a[aria-current="page"] { border-color:var(--accent); color:var(--accent); }
+  h1 { font-size:clamp(1.9rem,5.5vw,3rem); line-height:1.1; margin:0 0 8px; text-wrap:balance; }
+  h2 { margin:48px 0 14px; font-size:1.45rem; }
+  p { max-width:70ch; }
+  .lede { color:var(--muted); font-size:1.12rem; margin:0 0 22px; }
+  a { color:var(--accent); }
+  .diagram { width:100%; height:auto; display:block; border-radius:14px; border:1px solid var(--line); }
+  .stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:10px; margin:18px 0; }
+  .stat { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:12px 14px; }
+  .stat b { display:block; font-size:1.35rem; color:var(--accent); font-variant-numeric:tabular-nums; }
+  .stat small { color:var(--muted); }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:16px; }
+  .shot { margin:0; background:var(--panel); border:1px solid var(--line); border-radius:14px; overflow:hidden; display:flex; flex-direction:column; }
+  .shot img { width:100%; height:auto; display:block; aspect-ratio:1344/768; object-fit:cover; }
+  figcaption { padding:12px 14px 14px; display:grid; gap:4px; min-width:0; }
+  .meta { color:var(--muted); font-size:.85rem; font-variant-numeric:tabular-nums; }
+  details summary { cursor:pointer; color:var(--accent2); font-size:.9rem; }
+  details p { margin:6px 0 0; font-size:.88rem; color:var(--muted); }
+  .table-wrap { overflow-x:auto; border:1px solid var(--line); border-radius:12px; }
+  table { border-collapse:collapse; width:100%; min-width:600px; background:var(--panel); }
+  th, td { text-align:left; padding:10px 14px; border-bottom:1px solid var(--line); vertical-align:top; font-size:.94rem; }
+  th { color:var(--accent2); font-weight:600; }
+  tr:last-child td { border-bottom:0; }
+  .ok { color:var(--ok); font-weight:600; } .no { color:var(--warm); font-weight:600; }
+  footer { margin-top:64px; color:var(--muted); font-size:.88rem; border-top:1px solid var(--line); padding-top:16px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="top">
+    <span class="badge">🎬 simpligen v{{VERSION}}</span>
+    <nav aria-label="Main menu">
+      <a href="/">🏠 Home</a>
+      <a href="/architecture.html">🏗️ Architecture</a>
+      <a href="/gallery.html" aria-current="page">🎨 AI images</a>
+      <a href="/images.html">🖼️ Local images</a>
+      <a href="https://github.com/rifaterdemsahin/simpligen/blob/main/README.md">📘 README.md</a>
+      <a href="https://github.com/rifaterdemsahin/simpligen/blob/main/docs/COSTS.md">💰 Costs</a>
+      <a href="https://github.com/rifaterdemsahin/simpligen/blob/main/docs/HYPERFRAMES-COMPARISON.md">⚔️ vs HyperFrames</a>
+      <a href="https://github.com/rifaterdemsahin/simpligen">🐙 GitHub</a>
+    </nav>
+  </div>
+
+  <h1>🎨 AI images, made on this Mac</h1>
+  <p class="lede">Every background in the v{{VERSION}} video was generated locally. Ollama's gemma3:12b wrote each prompt from the scene text, and FLUX.2 Klein 4B painted it through mflux. No API keys, $0 per image.</p>
+
+  <img class="diagram" src="diagrams/gallery-flow.svg" alt="Flow: scene text, then Ollama gemma3 12b writes a prompt, then mflux FLUX.2 Klein 4B renders a 1344 by 768 image, then simpligen adds emoji, title, diagram and Kokoro voice into the video.">
+
+  <div class="stats">
+    <div class="stat"><b>🖼️ {{COUNT}}</b><small>images generated</small></div>
+    <div class="stat"><b>⏱️ {{AVG}} s</b><small>average per image (M1 Max)</small></div>
+    <div class="stat"><b>🧮 9.3 GB</b><small>peak memory, Klein 4B 8-bit</small></div>
+    <div class="stat"><b>💸 $0</b><small>per image</small></div>
+  </div>
+
+  <h2>🖼️ Gallery</h2>
+  <div class="grid">
+{{CARDS}}
+  </div>
+
+  <h2>📦 What got installed</h2>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Tool</th><th>Installed</th><th>Size</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>🎨 mflux</td><td>CLI via <code>uv tool install mflux</code>, with the FLUX.2 Klein 4B model</td><td>~15 GB (Hugging Face cache)</td><td class="ok">✅ used for every image here</td></tr>
+      <tr><td>🦙 Ollama</td><td><code>x/z-image-turbo</code> image model (Ollama's experimental image generation)</td><td>12.8 GB</td><td>{{OLLAMA_STATUS}}</td></tr>
+      <tr><td>🧠 Ollama LLM</td><td><code>gemma3:12b</code> (already installed) writes the prompts</td><td>8.1 GB</td><td class="ok">✅ used</td></tr>
+      <tr><td>🧠 LM Studio</td><td>No image model: LM Studio only runs language models. Its local server also asks for an API token, so Ollama wrote the prompts instead.</td><td>n/a</td><td class="no">ℹ️ LLM only</td></tr>
+      <tr><td>🔊 Kokoro</td><td>Docker, <code>af_heart</code> voice (already running)</td><td>5.6 GB image</td><td class="ok">✅ narration</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>▶️ Reproduce</h2>
+  <pre style="background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;overflow-x:auto;font:13.5px/1.55 ui-monospace,Menlo,monospace">uv tool install mflux                                   # FLUX.2 Klein 4B downloads on first run
+python3 tools/gen_images.py examples/demo.json examples/images   # Ollama prompts + mflux images
+python3 -m simpligen examples/demo.json site/demo.mp4             # video with images, emojis, diagrams, Kokoro
+python3 tools/build_gallery.py                                    # this page</pre>
+
+  <footer>🎬 simpligen v{{VERSION}} · Images: FLUX.2 Klein 4B (Black Forest Labs, Apache 2.0) via mflux · Prompts: gemma3:12b via Ollama · Voice: Kokoro-82M · Generated 23 Nov 2026 on an Apple M1 Max.</footer>
+</main>
+</body>
+</html>

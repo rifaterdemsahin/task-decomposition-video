@@ -1,0 +1,74 @@
+[
+  {
+    "scene": 1,
+    "title": "Task Decomposition",
+    "motif": "burst",
+    "seed": 101,
+    "engine": "Pillow procedural (CPU)",
+    "seconds": 7.53,
+    "file": "01.png"
+  },
+  {
+    "scene": 3,
+    "title": "Spot the hidden jobs",
+    "motif": "grid",
+    "seed": 103,
+    "engine": "Pillow procedural (CPU)",
+    "seconds": 7.67,
+    "file": "03.png"
+  },
+  {
+    "scene": 4,
+    "title": "One giant prompt",
+    "motif": "tangle",
+    "seed": 104,
+    "engine": "Pillow procedural (CPU)",
+    "seconds": 6.8,
+    "file": "04.png"
+  },
+  {
+    "scene": 5,
+    "title": "Chain of Thought",
+    "motif": "chain",
+    "seed": 105,
+    "engine": "Pillow procedural (CPU)",
+    "seconds": 7.73,
+    "file": "05.png"
+  },
+  {
+    "scene": 8,
+    "title": "Turn one prompt into five",
+    "motif": "chain",
+    "seed": 108,
+    "engine": "Pillow procedural (CPU)",
+    "seconds": 7.42,
+    "file": "08.png"
+  },
+  {
+    "scene": 14,
+    "title": "Decompose it yourself",
+    "motif": "tree",
+    "seed": 114,
+    "engine": "Pillow procedural (CPU)",
+    "seconds": 8.13,
+    "file": "14.png"
+  },
+  {
+    "scene": 18,
+    "title": "Know when to use it",
+    "motif": "burst",
+    "seed": 118,
+    "engine": "Pillow procedural (CPU)",
+    "seconds": 7.8,
+    "file": "18.png"
+  },
+  {
+    "scene": 25,
+    "title": "Try it this week",
+    "motif": "tree",
+    "seed": 125,
+    "engine": "Pillow procedural (CPU)",
+    "seconds": 8.01,
+    "file": "25.png"
+  }
+]

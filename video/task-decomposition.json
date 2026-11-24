@@ -1,0 +1,254 @@
+{
+  "objective": "After this, the viewer can break a big business request into a chain of checkable steps that Claude reasons through one at a time.",
+  "tts": "kokoro",
+  "voice": "af_heart",
+  "fade": 0,
+  "scenes": [
+    {
+      "title": "Task Decomposition",
+      "subtitle": "Claude Associate · Multi-step reasoning",
+      "emoji": "🧩",
+      "animate": "intro",
+      "chapter": "Why one big prompt fails",
+      "icons": [
+        [
+          "🗣️",
+          "Tell"
+        ],
+        [
+          "👀",
+          "Show"
+        ],
+        [
+          "✍️",
+          "Do"
+        ],
+        [
+          "🚀",
+          "Apply"
+        ]
+      ],
+      "bg": "#0B1020",
+      "accent": "#60A5FA",
+      "narration": "One prompt. Five hidden jobs. And an answer you can't check. That's what happens when you ask Claude to analyse a quarter of market data and propose strategies, all in one go.",
+      "image": "images/01.png"
+    },
+    {
+      "title": "Where we're heading",
+      "subtitle": "One request, five checkable steps",
+      "emoji": "🎯",
+      "svg": "svg/06-after.svg",
+      "bg": "#0B1020",
+      "accent": "#60A5FA",
+      "narration": "Here's where we're heading: the same request as five small steps, each one checkable. By the end of this lesson, you'll be able to break any big business request into a chain of steps that Claude gets right, and that you can verify."
+    },
+    {
+      "title": "Spot the hidden jobs",
+      "subtitle": "Chapter 1 of 4 · TELL",
+      "emoji": "🗣️",
+      "chapter": "Spot the hidden jobs",
+      "bg": "#0B1020",
+      "accent": "#60A5FA",
+      "narration": "Chapter one. Spot the hidden jobs.",
+      "image": "images/03.png"
+    },
+    {
+      "title": "One giant prompt",
+      "subtitle": "Big asks get shallow answers",
+      "emoji": "😵",
+      "bg": "#0B1020",
+      "accent": "#60A5FA",
+      "narration": "Here's a prompt many of us have typed: analyze our Q three market data and propose five strategies. It looks like one request, but it hides at least five jobs: read the data, spot the trends, explain the causes, generate ideas, and rank them. Asked in one breath, the model has to juggle all of them at once. The usual result is generic strategies, skipped steps, or numbers that were never in the data.",
+      "image": "images/04.png"
+    },
+    {
+      "title": "Chain of Thought",
+      "subtitle": "Reason first, answer second",
+      "emoji": "🧠",
+      "bg": "#0B1020",
+      "accent": "#60A5FA",
+      "narration": "Chain of thought means asking the model to write out its reasoning before it gives the answer. Each step is on the page, so later steps can build on earlier ones, and you can read the reasoning to see exactly where it went wrong. Same model, same data, but more of the work happens out loud, which usually means fewer errors on multi-step problems.",
+      "image": "images/05.png"
+    },
+    {
+      "title": "Decomposition",
+      "subtitle": "Split the job into ordered sub-tasks",
+      "emoji": "🪓",
+      "svg": "svg/04-decompose.svg",
+      "bg": "#0B1020",
+      "accent": "#60A5FA",
+      "narration": "Task decomposition works one level up. Instead of one prompt doing everything, you break the project into small, ordered sub-tasks. Each one has a clear input, a single job, and a clear output. Chain of thought improves the reasoning inside a step. Decomposition improves the structure between steps. You'll want both."
+    },
+    {
+      "title": "Many jobs, many steps",
+      "subtitle": "Takeaway",
+      "emoji": "💡",
+      "bg": "#0B1020",
+      "accent": "#60A5FA",
+      "narration": "Takeaway: if a request hides several jobs, give each job its own step."
+    },
+    {
+      "title": "Turn one prompt into five",
+      "subtitle": "Chapter 2 of 4 · SHOW",
+      "emoji": "👀",
+      "chapter": "Turn one prompt into five",
+      "bg": "#052E16",
+      "accent": "#4ADE80",
+      "narration": "Chapter two. Turn one prompt into five.",
+      "image": "images/08.png"
+    },
+    {
+      "title": "Before",
+      "subtitle": "One prompt does everything",
+      "emoji": "❌",
+      "svg": "svg/05-before.svg",
+      "bg": "#052E16",
+      "accent": "#4ADE80",
+      "narration": "Here's the before version: one prompt, the Q three data pasted in, and a request for five strategies. You do get an answer. But you can't tell which numbers came from the data, why these five were chosen, or where the reasoning broke."
+    },
+    {
+      "title": "After",
+      "subtitle": "Five steps, each feeding the next",
+      "emoji": "✅",
+      "svg": "svg/06-after.svg",
+      "bg": "#052E16",
+      "accent": "#4ADE80",
+      "narration": "Now the after version. Step one: extract the key metrics, and quote the source rows. Step two: find the three biggest trends. Step three: explain the likely cause of each trend. Step four: brainstorm ten strategy options tied to those causes. Step five: score them on impact and effort, and pick the best five. Every output becomes the next step's input."
+    },
+    {
+      "title": "Show your work",
+      "subtitle": "Phrasing that forces reasoning",
+      "emoji": "🗒️",
+      "svg": "svg/07-phrasing.svg",
+      "bg": "#052E16",
+      "accent": "#4ADE80",
+      "narration": "Phrasing matters. Plain, think step by step, helps a little. Better is to spell out the steps: first do this, then that, then the next thing. Best for review is structure. Ask Claude to put its reasoning inside thinking tags and the final result inside answer tags. Now you can read the work, and your code or a colleague can pull out just the answer."
+    },
+    {
+      "title": "Chain the prompts",
+      "subtitle": "Check between every step",
+      "emoji": "🔗",
+      "svg": "svg/08-chain.svg",
+      "bg": "#052E16",
+      "accent": "#4ADE80",
+      "narration": "For bigger projects, run each step as its own prompt and pass the output forward. That's called prompt chaining. Between steps you can check the result, fix a mistake early, or rerun just one step. If step two found the wrong trends, you fix step two, not the whole strategy deck."
+    },
+    {
+      "title": "Visible, checked steps",
+      "subtitle": "Takeaway",
+      "emoji": "💡",
+      "bg": "#052E16",
+      "accent": "#4ADE80",
+      "narration": "Takeaway: make the reasoning visible, and check each output before the next step uses it."
+    },
+    {
+      "title": "Decompose it yourself",
+      "subtitle": "Chapter 3 of 4 · DO",
+      "emoji": "✍️",
+      "chapter": "Decompose a task yourself",
+      "bg": "#2A1A05",
+      "accent": "#FBBF24",
+      "narration": "Chapter three. Decompose it yourself.",
+      "image": "images/14.png"
+    },
+    {
+      "title": "Your turn",
+      "subtitle": "Pause and fill in the worksheet",
+      "emoji": "📝",
+      "svg": "svg/09-worksheet.svg",
+      "bg": "#2A1A05",
+      "accent": "#FBBF24",
+      "narration": "Pause the video now. Take this task: plan the launch of a new product next quarter. Write four to six sub-tasks. For each one, note its input, its output, and how you'd check that output is right. Then write the prompt for step one, using explicit step-by-step phrasing. Give yourself five minutes, then press play."
+    },
+    {
+      "title": "A sample answer",
+      "subtitle": "Compare with yours",
+      "emoji": "🔍",
+      "svg": "svg/10-sample.svg",
+      "bg": "#2A1A05",
+      "accent": "#FBBF24",
+      "narration": "Here's one possible answer. Define the audience and the launch goal. Scan the competitors. Write the positioning and the key message. Choose channels and split the budget. Then build the timeline and list the risks. Yours may look different, and that's fine."
+    },
+    {
+      "title": "One job per step",
+      "subtitle": "Takeaway",
+      "emoji": "💡",
+      "bg": "#2A1A05",
+      "accent": "#FBBF24",
+      "narration": "Takeaway: every step gets one job, and an output you can check."
+    },
+    {
+      "title": "Know when to use it",
+      "subtitle": "Chapter 4 of 4 · APPLY",
+      "emoji": "🚀",
+      "chapter": "Know when to decompose",
+      "bg": "#1E0B2E",
+      "accent": "#C084FC",
+      "narration": "Chapter four. Know when to use it.",
+      "image": "images/18.png"
+    },
+    {
+      "title": "When to decompose",
+      "subtitle": "And when not to",
+      "emoji": "⚖️",
+      "svg": "svg/12-when.svg",
+      "bg": "#1E0B2E",
+      "accent": "#C084FC",
+      "narration": "Decompose when the task has several stages, involves numbers, drives an important decision, or when someone needs to audit the reasoning. Keep it to one prompt for simple lookups and quick rewrites, where extra steps only add time and cost."
+    },
+    {
+      "title": "Decompose multi-stage work",
+      "subtitle": "Takeaway",
+      "emoji": "💡",
+      "bg": "#1E0B2E",
+      "accent": "#C084FC",
+      "narration": "Takeaway: decompose when the work has stages, numbers, or stakes. Otherwise, keep it simple."
+    },
+    {
+      "title": "Recap",
+      "subtitle": "What you can do now",
+      "emoji": "🎓",
+      "svg": "svg/21-recap-1.svg",
+      "chapter": "Recap and practice",
+      "bg": "#0B1020",
+      "accent": "#60A5FA",
+      "narration": "Let's recap. Big prompts hide many jobs."
+    },
+    {
+      "title": "Recap",
+      "subtitle": "What you can do now",
+      "emoji": "🎓",
+      "svg": "svg/21-recap-2.svg",
+      "bg": "#0B1020",
+      "accent": "#60A5FA",
+      "narration": "Chain of thought and explicit phrasing make the steps visible."
+    },
+    {
+      "title": "Recap",
+      "subtitle": "What you can do now",
+      "emoji": "🎓",
+      "svg": "svg/21-recap-3.svg",
+      "bg": "#0B1020",
+      "accent": "#60A5FA",
+      "narration": "Each step gets one job, a clear input, and an output you can check."
+    },
+    {
+      "title": "Recap",
+      "subtitle": "What you can do now",
+      "emoji": "🎓",
+      "svg": "svg/21-recap-4.svg",
+      "bg": "#0B1020",
+      "accent": "#60A5FA",
+      "narration": "And you decompose when the work is multi-stage, numeric, or high-stakes."
+    },
+    {
+      "title": "Try it this week",
+      "subtitle": "One real task, two ways",
+      "emoji": "🚀",
+      "bg": "#1E0B2E",
+      "accent": "#C084FC",
+      "narration": "Your practice task: this week, take one real request you'd normally send Claude as a single prompt. Run it once as it is, then again as a chain of steps with the reasoning shown, and compare the answers. Post your step list, and what changed, in the Skool community. See you in the next lesson.",
+      "image": "images/25.png"
+    }
+  ]
+}

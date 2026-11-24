@@ -1,0 +1,23 @@
+{
+  "tts": "auto",
+  "voice": "af_heart",
+  "scenes": [
+    {
+      "title": "My topic",
+      "subtitle": "One line that says what this video is",
+      "emoji": "🎬",
+      "animate": "intro",
+      "bg": "#0B1020",
+      "accent": "#22D3EE",
+      "narration": "One or two sentences that open the video."
+    },
+    {
+      "title": "The key point",
+      "subtitle": "Short supporting line",
+      "emoji": "💡",
+      "bg": "#052E16",
+      "accent": "#4ADE80",
+      "narration": "Explain the key point in plain words. Add svg and image fields once those files exist."
+    }
+  ]
+}
