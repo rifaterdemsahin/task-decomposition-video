@@ -21,7 +21,7 @@ from pathlib import Path
 
 SITE = Path(__file__).resolve().parent.parent / "site"
 SITE_URL = os.environ.get("SITE_URL", "").rstrip("/")
-PAGES = ["index.html", "kanban.html", "effort.html", "mac-flux.html"]
+PAGES = ["index.html", "kanban.html", "effort.html", "mac-flux.html", "skill.html"]
 
 
 class Refs(HTMLParser):
@@ -119,7 +119,7 @@ class TestLiveSite(unittest.TestCase):
 
     def test_pages_and_assets_answer(self):
         expect = {"": "text/html", "kanban.html": "text/html", "effort.html": "text/html",
-                  "mac-flux.html": "text/html",
+                  "mac-flux.html": "text/html", "skill.html": "text/html",
                   "task-decomposition.mp4": "video/mp4", "task-decomposition.vtt": "text/vtt",
                   "poster.jpg": "image/jpeg", "task-decomposition.description.md": "text/markdown",
                   "task-decomposition.srt": "", "task-decomposition.qa.json": "application/json"}

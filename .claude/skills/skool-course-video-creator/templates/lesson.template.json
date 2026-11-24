@@ -1,0 +1,89 @@
+{
+  "objective": "After this, the viewer can __OBJECTIVE__.",
+  "tts": "kokoro",
+  "voice": "af_heart",
+  "fade": 0,
+  "footer": "",
+  "scenes": [
+    {
+      "title": "__TITLE__",
+      "subtitle": "Claude Associate · __SUBTITLE__",
+      "emoji": "🧩",
+      "animate": "intro",
+      "chapter": "Why it matters",
+      "icons": [["🗣️", "Tell"], ["👀", "Show"], ["✍️", "Do"], ["🚀", "Apply"]],
+      "bg": "#0B1020",
+      "accent": "#60A5FA",
+      "narration": "State the problem in one to three short sentences."
+    },
+    {
+      "title": "Where we're heading",
+      "subtitle": "The result you will build",
+      "emoji": "🎯",
+      "bg": "#0B1020",
+      "accent": "#60A5FA",
+      "narration": "Here's where we're heading. By the end of this lesson, you'll be able to do the objective."
+    },
+    {
+      "title": "First outcome",
+      "subtitle": "Chapter 1 of 3 · TELL",
+      "emoji": "🗣️",
+      "chapter": "First outcome",
+      "bg": "#0B1020",
+      "accent": "#60A5FA",
+      "narration": "Chapter one. First outcome."
+    },
+    {
+      "title": "Key idea",
+      "subtitle": "One idea per scene",
+      "emoji": "🧠",
+      "bg": "#0B1020",
+      "accent": "#60A5FA",
+      "narration": "Explain one idea in plain words."
+    },
+    {
+      "title": "Key term",
+      "subtitle": "Takeaway",
+      "emoji": "💡",
+      "bg": "#0B1020",
+      "accent": "#60A5FA",
+      "narration": "Takeaway: one line the viewer should remember."
+    },
+    {
+      "title": "Second outcome",
+      "subtitle": "Chapter 2 of 3 · SHOW",
+      "emoji": "👀",
+      "chapter": "Second outcome",
+      "bg": "#052E16",
+      "accent": "#4ADE80",
+      "narration": "Chapter two. Second outcome."
+    },
+    {
+      "title": "Worked example",
+      "subtitle": "Show it working",
+      "emoji": "✅",
+      "bg": "#052E16",
+      "accent": "#4ADE80",
+      "narration": "Walk through a real example, step by step."
+    },
+    {
+      "title": "Your turn",
+      "subtitle": "Chapter 3 of 3 · DO",
+      "emoji": "✍️",
+      "chapter": "Do it yourself",
+      "bg": "#2A1A05",
+      "accent": "#FBBF24",
+      "narration": "Chapter three. Your turn. Pause the video now and try the exercise."
+    },
+    {
+      "title": "Your assignment",
+      "subtitle": "This week · one real task",
+      "emoji": "📝",
+      "animate": "assignment",
+      "items": [["🎯", "Pick one real task"], ["🧪", "Try the technique on it"], ["💬", "Post what changed in Skool"]],
+      "bg": "#1E0B2E",
+      "accent": "#C084FC",
+      "narration": "Here's your assignment for this week. Pick one real task. Try the technique on it. Post what changed in the Skool community. See you in the next lesson."
+    }
+  ]
+}

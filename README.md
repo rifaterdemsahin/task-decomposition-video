@@ -18,6 +18,7 @@ checkable steps that Claude reasons through one at a time.
 | Production board (Pages) | https://rifaterdemsahin.github.io/task-decomposition-video/kanban.html |
 | Effort report (Pages) | https://rifaterdemsahin.github.io/task-decomposition-video/effort.html |
 | Mac FLUX one-liner (Pages) | https://rifaterdemsahin.github.io/task-decomposition-video/mac-flux.html |
+| skool-course-video-creator skill (Pages) | https://rifaterdemsahin.github.io/task-decomposition-video/skill.html |
 | Research notes (Claude doc) | https://claude.ai/artifact/CLrGTg5UoMx7UdJHjoMYNg |
 | Production board (Claude artifact) | https://claude.ai/artifact/JeK93WVKQAui3G8Lwrt8se |
 | Effort report (Claude artifact) | https://claude.ai/artifact/54ereVfN9t1hiQnTbhtLLj |
@@ -51,6 +52,17 @@ The Claude links are private to the owner until shared from each page's Share me
 a class + object diagram (decomposition), an activity diagram with guard conditions (the 5-step
 pipeline) and a sequence diagram (prompt chaining between you and Claude). Captions are small,
 burned in, and fill word by word as they are spoken.
+
+## Reusable skill: skool-course-video-creator
+
+`.claude/skills/skool-course-video-creator/` turns a topic brief into a lesson video and site the
+way this one was made. Start a new lesson from this repo:
+
+```bash
+bash .claude/skills/skool-course-video-creator/scripts/new_lesson.sh <slug> "<Title>" ../<slug>-video
+```
+
+Then ask Claude Code to use the `skool-course-video-creator` skill with your topic brief.
 
 ## Build
 

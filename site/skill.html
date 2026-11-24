@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Skool Course Video Creator</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: skill reference — what it makes, the one command to start, the pipeline, the scene recipes, the UML map, the pitfalls. */
+:root {
+  --bg: #F3F5F9; --surface: #FFFFFF; --fg: #141A26; --muted: #5B6578; --line: #DCE1EA; --accent: #2F5BEA; --tint: #E7EDFD;
+  --code-bg: #0F172A; --code-fg: #E8ECF3;
+  --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) { :root {
+  --bg: #0E121A; --surface: #161C27; --fg: #E8ECF3; --muted: #9AA4B6; --line: #283143; --accent: #7C9BFF; --tint: #18213A;
+  --code-bg: #0A0E15; color-scheme: dark; } }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.55 var(--body); }
+.wrap { max-width: 1000px; margin: 0 auto; padding: 32px max(16px, env(safe-area-inset-right, 0px)) 56px max(16px, env(safe-area-inset-left, 0px)); display: grid; gap: 34px; }
+.eyebrow { font: 600 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+h1 { font: 800 clamp(28px, 4vw, 40px)/1.1 var(--display); margin: 10px 0 10px; text-wrap: balance; }
+h2 { font: 800 20px/1.2 var(--display); margin: 0 0 12px; }
+p { margin: 0; max-width: 70ch; }
+.lead { color: var(--muted); }
+.makes { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+@media (max-width: 800px) { .makes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.makes div { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; min-width: 0; }
+.makes b { display: block; margin-bottom: 2px; }
+.makes span { color: var(--muted); font-size: 13.5px; }
+.cmd { display: grid; grid-template-columns: minmax(0, 1fr) auto; background: var(--code-bg); border-radius: 10px; overflow: hidden; }
+.cmd pre { margin: 0; padding: 16px 18px; overflow-x: auto; color: var(--code-fg); font: 400 14px/1.5 var(--mono); }
+.cmd button { all: unset; cursor: pointer; padding: 0 18px; font: 600 14px var(--body); color: #FFFFFF; background: #2F5BEA; }
+.cmd button:hover { background: #2548C0; }
+.cmd button:focus-visible { outline: 2px solid #FFFFFF; outline-offset: -4px; }
+.scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; min-width: 620px; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; font-size: 14px; }
+th { font: 600 12px/1.2 var(--mono); letter-spacing: .05em; text-transform: uppercase; color: var(--muted); background: var(--tint); }
+td:first-child { font-weight: 600; white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+code { font: 400 13px var(--mono); }
+a { color: var(--accent); }
+.note { color: var(--muted); font-size: 13.5px; margin-top: 10px; }
+</style>
+</head>
+<body>
+<nav class="tdm" aria-label="Site">
+<style>
+.tdm { --tdm-bg: #FFFFFF; --tdm-fg: #141A26; --tdm-muted: #5B6578; --tdm-line: #DCE1EA; --tdm-accent: #2F5BEA; --tdm-tint: #E7EDFD;
+  position: sticky; top: 0; z-index: 20; background: var(--tdm-bg); border-bottom: 1px solid var(--tdm-line);
+  font: 500 14px/1 "Inter", system-ui, -apple-system, "Segoe UI", sans-serif; }
+@media (prefers-color-scheme: dark) { .tdm { --tdm-bg: #161C27; --tdm-fg: #E8ECF3; --tdm-muted: #9AA4B6; --tdm-line: #283143; --tdm-accent: #7C9BFF; --tdm-tint: #18213A; } }
+.tdm-in { max-width: 1120px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 4px;
+  padding: 10px max(16px, env(safe-area-inset-right, 0px)) 10px max(16px, env(safe-area-inset-left, 0px)); }
+.tdm-brand { font: 800 15px/1 "Archivo", "Helvetica Neue", Arial, sans-serif; color: var(--tdm-fg); margin-right: 10px; text-decoration: none; white-space: nowrap; }
+.tdm a.tdm-l { color: var(--tdm-muted); text-decoration: none; padding: 8px 10px; border-radius: 6px; white-space: nowrap; }
+.tdm a.tdm-l:hover, .tdm a.tdm-l:focus-visible { background: var(--tdm-tint); color: var(--tdm-fg); }
+.tdm a.tdm-l:focus-visible { outline: 2px solid var(--tdm-accent); outline-offset: 1px; }
+.tdm a.tdm-l[aria-current="page"] { color: var(--tdm-accent); background: var(--tdm-tint); font-weight: 600; }
+</style>
+<div class="tdm-in">
+  <a class="tdm-brand" href="index.html">🧩 Task Decomposition</a>
+  <a class="tdm-l" href="index.html">🎬 Lesson</a>
+  <a class="tdm-l" href="kanban.html">📋 Board</a>
+  <a class="tdm-l" href="effort.html">⏱️ Effort</a>
+  <a class="tdm-l" href="mac-flux.html">🍎 Mac FLUX</a>
+  <a class="tdm-l" href="skill.html" aria-current="page">🛠️ Skill</a>
+  <a class="tdm-l" href="https://claude.ai/artifact/CLrGTg5UoMx7UdJHjoMYNg">📚 Research</a>
+  <a class="tdm-l" href="https://github.com/rifaterdemsahin/task-decomposition-video">🐙 GitHub</a>
+</div>
+</nav>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">Claude Code skill · .claude/skills/skool-course-video-creator</span>
+    <h1>Skool Course Video Creator</h1>
+    <p class="lead">A reusable skill that turns a topic brief into a ~5 minute narrated Skool lesson and its lesson site, with local tools only. This lesson was built with it.</p>
+  </header>
+
+  <section>
+    <h2>What one run produces</h2>
+    <div class="makes">
+      <div><b>🎬 Lesson video</b><span>1080p, Kokoro voice, hook, chapters, recap, animated assignment</span></div>
+      <div><b>💬 Captions</b><span>small, burned in, word-by-word fill; SRT and VTT too</span></div>
+      <div><b>🧭 UML + emoji</b><span>class, activity and sequence diagrams with colour emoji</span></div>
+      <div><b>🌐 Lesson site</b><span>GitHub Pages with a shared menu, board, effort report, live tests</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Start a new lesson</h2>
+    <div class="cmd">
+      <pre id="one">bash .claude/skills/skool-course-video-creator/scripts/new_lesson.sh prompt-chaining "Prompt Chaining" ../prompt-chaining-video</pre>
+      <button id="copy" type="button">Copy</button>
+    </div>
+    <p class="note">Run inside this repo. It copies the toolchain, renames the slug everywhere, starts <code>video/&lt;slug&gt;.json</code> from the lesson template, and runs <code>git init</code>. Then ask Claude Code to use the skill with your topic brief.</p>
+  </section>
+
+  <section>
+    <h2>Pipeline</h2>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Step</th><th>What happens</th><th>Done when</th></tr></thead>
+        <tbody>
+          <tr><td>1 Scaffold</td><td><code>new_lesson.sh &lt;slug&gt; "&lt;Title&gt;" &lt;dir&gt;</code></td><td>new repo with the scene file</td></tr>
+          <tr><td>2 Objective</td><td>"After this, the viewer can ___"; 3–5 chapters as Tell, Show, Do, Apply</td><td>one sentence, outcome-named chapters</td></tr>
+          <tr><td>3 Script</td><td>scene JSON: hook, preview, chapter cards, ideas, takeaways, recap, assignment</td><td>JSON loads</td></tr>
+          <tr><td>4 Diagrams</td><td><code>tools/make_svgs.py</code>: UML with <code>data-emoji</code> colour emoji</td><td>every SVG rasterises</td></tr>
+          <tr><td>5 Backgrounds</td><td>Mac FLUX one-liner, or CPU art on the Linux VM</td><td>one PNG per planned scene</td></tr>
+          <tr><td>6 Build</td><td><code>./build.sh</code>: Kokoro → SVG → images → render → captions, loudness, QA</td><td><code>qa.json</code> pass is true</td></tr>
+          <tr><td>7 Look</td><td>pull 4–6 frames from the final video and read them</td><td>no overlaps, captions small, emoji in colour</td></tr>
+          <tr><td>8 Publish</td><td><code>tools/build_site.sh --publish</code>; workflow deploys <code>site/</code> and tests it live</td><td>workflow green, live tests OK</td></tr>
+          <tr><td>9 Companions</td><td>research doc with fetched sources, board, effort report</td><td>linked from the menu and README</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Which UML diagram for which idea</h2>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Diagram</th><th>Use it when the lesson shows</th><th>In this lesson</th></tr></thead>
+        <tbody>
+          <tr><td>🧩 Class + object</td><td>a thing made of parts</td><td>Q3StrategyTask ◆— 5 SubTask instances</td></tr>
+          <tr><td>🔁 Activity</td><td>a process with checks between steps</td><td>5-step pipeline with a [guard] on each arrow</td></tr>
+          <tr><td>🤝 Sequence</td><td>who talks to whom, in what order</td><td>You ⇄ Claude prompt chaining, alt [check fails]</td></tr>
+          <tr><td>⚖️ Checklist</td><td>when to use it and when not</td><td>✅ decompose when / ❌ keep it one prompt</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Pitfalls it guards against</h2>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Symptom</th><th>Fix</th></tr></thead>
+        <tbody>
+          <tr><td>Pages 404 after a green deploy</td><td>the workflow must upload <code>./site</code>, not the repo root</td></tr>
+          <tr><td>Title runs into the diagram</td><td>wrap by measured pixel width</td></tr>
+          <tr><td>Assignment items out of sync</td><td>one narration sentence per item, after one intro sentence</td></tr>
+          <tr><td>Pace over 170 words/min</td><td>raise <code>KOKORO_PAUSE</code> and rebuild</td></tr>
+          <tr><td>Captions show twice</td><td>burned-in captions, so the browser track is not <code>default</code></td></tr>
+          <tr><td>Build breaks mid-run</td><td>never edit a script bash is still running</td></tr>
+          <tr><td>FLUX unavailable</td><td>mflux needs Apple Silicon: use the Mac one-liner</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Full skill: <a href="https://github.com/rifaterdemsahin/task-decomposition-video/blob/main/.claude/skills/skool-course-video-creator/SKILL.md">SKILL.md</a> · <a href="https://github.com/rifaterdemsahin/task-decomposition-video/tree/main/.claude/skills/skool-course-video-creator">skill folder</a></p>
+  </section>
+</div>
+<script>
+document.getElementById('copy').addEventListener('click', async e => {
+  const text = document.getElementById('one').textContent;
+  try { await navigator.clipboard.writeText(text); e.target.textContent = 'Copied'; }
+  catch { const r = document.createRange(); r.selectNodeContents(document.getElementById('one'));
+          const s = getSelection(); s.removeAllRanges(); s.addRange(r); e.target.textContent = 'Selected'; }
+  setTimeout(() => { e.target.textContent = 'Copy'; }, 1800);
+});
+</script>
+</body>
+</html>
