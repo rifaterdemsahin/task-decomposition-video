@@ -6,6 +6,31 @@
 <style>*{box-sizing:border-box}body{margin:0}img{max-width:100%}</style>
 </head>
 <body>
+<nav class="tdm" aria-label="Site">
+<style>
+.tdm { --tdm-bg: #FFFFFF; --tdm-fg: #141A26; --tdm-muted: #5B6578; --tdm-line: #DCE1EA; --tdm-accent: #2F5BEA; --tdm-tint: #E7EDFD;
+  position: sticky; top: 0; z-index: 20; background: var(--tdm-bg); border-bottom: 1px solid var(--tdm-line);
+  font: 500 14px/1 "Inter", system-ui, -apple-system, "Segoe UI", sans-serif; }
+@media (prefers-color-scheme: dark) { .tdm { --tdm-bg: #161C27; --tdm-fg: #E8ECF3; --tdm-muted: #9AA4B6; --tdm-line: #283143; --tdm-accent: #7C9BFF; --tdm-tint: #18213A; } }
+.tdm-in { max-width: 1120px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 4px;
+  padding: 10px max(16px, env(safe-area-inset-right, 0px)) 10px max(16px, env(safe-area-inset-left, 0px)); }
+.tdm-brand { font: 800 15px/1 "Archivo", "Helvetica Neue", Arial, sans-serif; color: var(--tdm-fg); margin-right: 10px; text-decoration: none; white-space: nowrap; }
+.tdm a.tdm-l { color: var(--tdm-muted); text-decoration: none; padding: 8px 10px; border-radius: 6px; white-space: nowrap; }
+.tdm a.tdm-l:hover, .tdm a.tdm-l:focus-visible { background: var(--tdm-tint); color: var(--tdm-fg); }
+.tdm a.tdm-l:focus-visible { outline: 2px solid var(--tdm-accent); outline-offset: 1px; }
+.tdm a.tdm-l[aria-current="page"] { color: var(--tdm-accent); background: var(--tdm-tint); font-weight: 600; }
+</style>
+<div class="tdm-in">
+  <a class="tdm-brand" href="index.html">🧩 Task Decomposition</a>
+  <a class="tdm-l" href="index.html">🎬 Lesson</a>
+  <a class="tdm-l" href="kanban.html">📋 Board</a>
+  <a class="tdm-l" href="effort.html" aria-current="page">⏱️ Effort</a>
+  <a class="tdm-l" href="mac-flux.html">🍎 Mac FLUX</a>
+  <a class="tdm-l" href="https://claude.ai/artifact/CLrGTg5UoMx7UdJHjoMYNg">📚 Research</a>
+  <a class="tdm-l" href="https://github.com/rifaterdemsahin/task-decomposition-video">🐙 GitHub</a>
+</div>
+</nav>
+
 <title>Task Decomposition Effort</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">

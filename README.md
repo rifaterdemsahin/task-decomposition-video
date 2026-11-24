@@ -17,6 +17,7 @@ checkable steps that Claude reasons through one at a time.
 | QA report | https://rifaterdemsahin.github.io/task-decomposition-video/task-decomposition.qa.json |
 | Production board (Pages) | https://rifaterdemsahin.github.io/task-decomposition-video/kanban.html |
 | Effort report (Pages) | https://rifaterdemsahin.github.io/task-decomposition-video/effort.html |
+| Mac FLUX one-liner (Pages) | https://rifaterdemsahin.github.io/task-decomposition-video/mac-flux.html |
 | Research notes (Claude doc) | https://claude.ai/artifact/CLrGTg5UoMx7UdJHjoMYNg |
 | Production board (Claude artifact) | https://claude.ai/artifact/JeK93WVKQAui3G8Lwrt8se |
 | Effort report (Claude artifact) | https://claude.ai/artifact/54ereVfN9t1hiQnTbhtLLj |
@@ -86,13 +87,26 @@ Steps it runs:
   self-drawing ticks and a progress bar
 - per-sentence speech timing (ffmpeg `silencedetect`) stored in the timeline
 
+## FLUX images on the Mac (one-liner)
+
+On an Apple Silicon Mac with uv and Ollama:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/rifaterdemsahin/task-decomposition-video/main/tools/mac_flux.sh | bash
+```
+
+It clones or pulls the repo, installs mflux, pulls `gemma3:12b`, generates FLUX.2 Klein images for
+the scenes in `video/images/plan.json`, and pushes them. `build.sh` then keeps them.
+
 ## Publish to GitHub Pages
 
 ```bash
 tools/build_site.sh --publish
 ```
 
-Copies the video, captions (SRT + VTT), QA report, board and effort pages into `site/`, commits
+Builds `site/` from `pages/` (landing page, Mac FLUX page), `kanban.html` and `effort.html`, with
+one shared menu from `pages/menu.html` inserted into every page. Copies the video, captions
+(SRT + VTT), QA report and poster into `site/`, commits
 it and pushes `main`. The workflow in `.github/workflows/static.yml` deploys `site/` to GitHub
 Pages, then runs `tests/test_site.py` against the live URL.
 

@@ -21,7 +21,7 @@ from pathlib import Path
 
 SITE = Path(__file__).resolve().parent.parent / "site"
 SITE_URL = os.environ.get("SITE_URL", "").rstrip("/")
-PAGES = ["index.html", "kanban.html", "effort.html"]
+PAGES = ["index.html", "kanban.html", "effort.html", "mac-flux.html"]
 
 
 class Refs(HTMLParser):
@@ -55,6 +55,24 @@ class TestSiteFiles(unittest.TestCase):
         for page in PAGES:
             for ref in local_refs(page):
                 self.assertTrue((SITE / ref).is_file(), f"{page} -> {ref} missing")
+
+    def test_every_page_has_the_shared_menu(self):
+        menus = []
+        for page in PAGES:
+            html = (SITE / page).read_text()
+            self.assertNotIn("<!--MENU-->", html, page)
+            start, end = html.index('<nav class="tdm"'), html.index("</nav>")
+            menu = html[start:end]
+            self.assertIn(f'href="{page}" aria-current="page"', menu, page)
+            menus.append(menu.replace(' aria-current="page"', ""))
+            for target in PAGES:  # every page links to every other page
+                self.assertIn(f'href="{target}"', menu, f"{page} menu lacks {target}")
+        self.assertEqual(len(set(menus)), 1, "menus differ between pages")
+
+    def test_mac_page_has_the_one_liner(self):
+        html = (SITE / "mac-flux.html").read_text()
+        self.assertIn("raw.githubusercontent.com/rifaterdemsahin/task-decomposition-video/main/tools/mac_flux.sh | bash", html)
+        self.assertTrue((SITE.parent / "tools" / "mac_flux.sh").is_file())
 
     def test_index_links_video_captions_and_pages(self):
         refs = local_refs("index.html")
@@ -101,6 +119,7 @@ class TestLiveSite(unittest.TestCase):
 
     def test_pages_and_assets_answer(self):
         expect = {"": "text/html", "kanban.html": "text/html", "effort.html": "text/html",
+                  "mac-flux.html": "text/html",
                   "task-decomposition.mp4": "video/mp4", "task-decomposition.vtt": "text/vtt",
                   "poster.jpg": "image/jpeg", "task-decomposition.description.md": "text/markdown",
                   "task-decomposition.srt": "", "task-decomposition.qa.json": "application/json"}

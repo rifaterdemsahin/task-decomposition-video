@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Task Decomposition Lesson</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: lesson landing page — title, the video with captions, chapter list beside it, then links to every artifact. */
+:root {
+  --bg: #F3F5F9; --surface: #FFFFFF; --fg: #141A26; --muted: #5B6578; --line: #DCE1EA; --accent: #2F5BEA; --tint: #E7EDFD;
+  --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) { :root {
+  --bg: #0E121A; --surface: #161C27; --fg: #E8ECF3; --muted: #9AA4B6; --line: #283143; --accent: #7C9BFF; --tint: #18213A; color-scheme: dark; } }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.55 var(--body); }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 32px max(16px, env(safe-area-inset-right, 0px)) 56px max(16px, env(safe-area-inset-left, 0px)); display: grid; gap: 32px; }
+.eyebrow { font: 600 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+h1 { font: 800 clamp(28px, 4vw, 42px)/1.1 var(--display); margin: 10px 0 10px; text-wrap: balance; }
+h2 { font: 800 20px/1.2 var(--display); margin: 0 0 12px; }
+p { margin: 0; max-width: 70ch; }
+.lead { color: var(--muted); }
+.player { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 20px; align-items: start; }
+@media (max-width: 860px) { .player { grid-template-columns: minmax(0, 1fr); } }
+video { width: 100%; border-radius: 10px; background: #000; display: block; }
+.chapters { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px; }
+.chapters ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.chapters button { all: unset; cursor: pointer; display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 8px; width: 100%; padding: 8px; border-radius: 6px; }
+.chapters button:hover, .chapters button:focus-visible { background: var(--tint); }
+.chapters button:focus-visible { outline: 2px solid var(--accent); }
+.chapters time { font: 600 13px var(--mono); color: var(--accent); font-variant-numeric: tabular-nums; }
+.links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 860px) { .links { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .links { grid-template-columns: minmax(0, 1fr); } }
+.links a { display: block; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; color: var(--fg); text-decoration: none; min-width: 0; }
+.links a:hover, .links a:focus-visible { border-color: var(--accent); }
+.links b { display: block; color: var(--accent); font-weight: 600; margin-bottom: 2px; }
+.links span { color: var(--muted); font-size: 13.5px; }
+footer { color: var(--muted); font-size: 13px; }
+a { color: var(--accent); }
+</style>
+</head>
+<body>
+<!--MENU-->
+<div class="wrap">
+  <header>
+    <span class="eyebrow">Claude Associate course · Skool community</span>
+    <h1>Task Decomposition: Multi-Step Reasoning Strategies</h1>
+    <p class="lead">After this lesson you can break a big business request into a chain of checkable steps that Claude reasons through one at a time.</p>
+  </header>
+
+  <section class="player">
+    <video id="v" controls preload="metadata" poster="poster.jpg">
+      <source src="task-decomposition.mp4" type="video/mp4">
+      <track kind="captions" src="task-decomposition.vtt" srclang="en" label="English (also burned in)">
+    </video>
+    <nav class="chapters" aria-label="Chapters">
+      <h2>Chapters</h2>
+      <ol id="ch"></ol>
+    </nav>
+  </section>
+
+  <section>
+    <h2>Everything for this lesson</h2>
+    <div class="links">
+      <a href="https://claude.ai/artifact/CLrGTg5UoMx7UdJHjoMYNg"><b>Research notes</b><span>Chain of thought and decomposition: papers, Claude practice, worked example, quiz</span></a>
+      <a href="kanban.html"><b>Production board</b><span>Done, in progress, blocked, needs you, recommendations</span></a>
+      <a href="effort.html"><b>Effort report</b><span>What it took to make this video, with measured numbers</span></a>
+      <a href="task-decomposition.srt"><b>Captions (SRT)</b><span>Upload as a separate YouTube caption track</span></a>
+      <a href="task-decomposition.qa.json"><b>QA report</b><span>Loudness, peak, flashes, pace, chapter checks</span></a>
+      <a href="https://github.com/rifaterdemsahin/task-decomposition-video"><b>Source code</b><span>Scene script, diagrams, local Kokoro voice, build script</span></a>
+    </div>
+  </section>
+
+  <footer>Made locally with simpligen · narration by Kokoro-82M (af_heart) on CPU · no music</footer>
+</div>
+<script>
+// chapters come from the description file the build writes, so the list never drifts from the video
+const v = document.getElementById('v'), list = document.getElementById('ch');
+fetch('task-decomposition.description.md').then(r => r.text()).then(text => {
+  for (const line of text.split('\n')) {
+    const m = line.match(/^(\d+):(\d\d) (.+)$/);
+    if (!m) continue;
+    const secs = +m[1] * 60 + +m[2];
+    const li = document.createElement('li'), b = document.createElement('button');
+    const t = document.createElement('time'); t.textContent = `${m[1]}:${m[2]}`;
+    const s = document.createElement('span'); s.textContent = m[3];
+    b.append(t, s);
+    b.addEventListener('click', () => { v.currentTime = secs; v.play(); });
+    li.append(b); list.append(li);
+  }
+}).catch(() => {});
+</script>
+</body>
+</html>

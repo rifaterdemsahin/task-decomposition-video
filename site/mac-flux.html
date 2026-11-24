@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mac FLUX Images</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: one job — copy the one-liner; then what it does, what it needs, and what happens next. */
+:root {
+  --bg: #F3F5F9; --surface: #FFFFFF; --fg: #141A26; --muted: #5B6578; --line: #DCE1EA; --accent: #2F5BEA; --tint: #E7EDFD;
+  --code-bg: #0F172A; --code-fg: #E8ECF3;
+  --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) { :root {
+  --bg: #0E121A; --surface: #161C27; --fg: #E8ECF3; --muted: #9AA4B6; --line: #283143; --accent: #7C9BFF; --tint: #18213A;
+  --code-bg: #0A0E15; color-scheme: dark; } }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.55 var(--body); }
+.wrap { max-width: 900px; margin: 0 auto; padding: 32px max(16px, env(safe-area-inset-right, 0px)) 56px max(16px, env(safe-area-inset-left, 0px)); display: grid; gap: 28px; }
+.eyebrow { font: 600 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+h1 { font: 800 clamp(28px, 4vw, 40px)/1.1 var(--display); margin: 10px 0 10px; text-wrap: balance; }
+h2 { font: 800 20px/1.2 var(--display); margin: 0 0 12px; }
+p { margin: 0; max-width: 68ch; }
+.lead { color: var(--muted); }
+.cmd { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0; background: var(--code-bg); border-radius: 10px; overflow: hidden; }
+.cmd pre { margin: 0; padding: 16px 18px; overflow-x: auto; color: var(--code-fg); font: 400 14px/1.5 var(--mono); }
+.cmd button { all: unset; cursor: pointer; padding: 0 18px; font: 600 14px var(--body); color: #FFFFFF; background: #2F5BEA; }
+.cmd button:hover { background: #2548C0; }
+.cmd button:focus-visible { outline: 2px solid #FFFFFF; outline-offset: -4px; }
+ol.steps { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; counter-reset: s; }
+ol.steps li { counter-increment: s; display: grid; grid-template-columns: 30px minmax(0, 1fr); gap: 10px; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; }
+ol.steps li::before { content: counter(s); font: 800 18px/1.3 var(--display); color: var(--accent); }
+code { font: 400 13.5px var(--mono); }
+.needs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+@media (max-width: 600px) { .needs { grid-template-columns: minmax(0, 1fr); } }
+.needs div { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; }
+.needs b { display: block; }
+.needs span { color: var(--muted); font-size: 13.5px; }
+a { color: var(--accent); }
+</style>
+</head>
+<body>
+<nav class="tdm" aria-label="Site">
+<style>
+.tdm { --tdm-bg: #FFFFFF; --tdm-fg: #141A26; --tdm-muted: #5B6578; --tdm-line: #DCE1EA; --tdm-accent: #2F5BEA; --tdm-tint: #E7EDFD;
+  position: sticky; top: 0; z-index: 20; background: var(--tdm-bg); border-bottom: 1px solid var(--tdm-line);
+  font: 500 14px/1 "Inter", system-ui, -apple-system, "Segoe UI", sans-serif; }
+@media (prefers-color-scheme: dark) { .tdm { --tdm-bg: #161C27; --tdm-fg: #E8ECF3; --tdm-muted: #9AA4B6; --tdm-line: #283143; --tdm-accent: #7C9BFF; --tdm-tint: #18213A; } }
+.tdm-in { max-width: 1120px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 4px;
+  padding: 10px max(16px, env(safe-area-inset-right, 0px)) 10px max(16px, env(safe-area-inset-left, 0px)); }
+.tdm-brand { font: 800 15px/1 "Archivo", "Helvetica Neue", Arial, sans-serif; color: var(--tdm-fg); margin-right: 10px; text-decoration: none; white-space: nowrap; }
+.tdm a.tdm-l { color: var(--tdm-muted); text-decoration: none; padding: 8px 10px; border-radius: 6px; white-space: nowrap; }
+.tdm a.tdm-l:hover, .tdm a.tdm-l:focus-visible { background: var(--tdm-tint); color: var(--tdm-fg); }
+.tdm a.tdm-l:focus-visible { outline: 2px solid var(--tdm-accent); outline-offset: 1px; }
+.tdm a.tdm-l[aria-current="page"] { color: var(--tdm-accent); background: var(--tdm-tint); font-weight: 600; }
+</style>
+<div class="tdm-in">
+  <a class="tdm-brand" href="index.html">🧩 Task Decomposition</a>
+  <a class="tdm-l" href="index.html">🎬 Lesson</a>
+  <a class="tdm-l" href="kanban.html">📋 Board</a>
+  <a class="tdm-l" href="effort.html">⏱️ Effort</a>
+  <a class="tdm-l" href="mac-flux.html" aria-current="page">🍎 Mac FLUX</a>
+  <a class="tdm-l" href="https://claude.ai/artifact/CLrGTg5UoMx7UdJHjoMYNg">📚 Research</a>
+  <a class="tdm-l" href="https://github.com/rifaterdemsahin/task-decomposition-video">🐙 GitHub</a>
+</div>
+</nav>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">Background images · FLUX.2 Klein 4B · Apple Silicon</span>
+    <h1>Make the lesson's images on your Mac</h1>
+    <p class="lead">The Linux build VM has no GPU, so the backgrounds there are drawn on the CPU. Run this once on an Apple Silicon Mac to replace them with FLUX images; the next build keeps them.</p>
+  </header>
+
+  <section>
+    <h2>Paste this in Terminal</h2>
+    <div class="cmd">
+      <pre id="one">curl -fsSL https://raw.githubusercontent.com/rifaterdemsahin/task-decomposition-video/main/tools/mac_flux.sh | bash</pre>
+      <button id="copy" type="button">Copy</button>
+    </div>
+    <p class="lead" style="margin-top:10px">Read the script first: <a href="https://github.com/rifaterdemsahin/task-decomposition-video/blob/main/tools/mac_flux.sh">tools/mac_flux.sh</a>. Set <code>DIR=…</code> before <code>bash</code> to clone somewhere other than <code>~/task-decomposition-video</code>.</p>
+  </section>
+
+  <section>
+    <h2>What it does</h2>
+    <ol class="steps">
+      <li><div>📥 Clones the repo, or pulls it if it is already there.</div></li>
+      <li><div>🎨 Installs <code>mflux</code> with uv if it is missing.</div></li>
+      <li><div>🦙 Starts Ollama if needed and pulls <code>gemma3:12b</code>, which writes one image prompt per scene.</div></li>
+      <li><div>🖼️ Runs <code>tools/gen_images.py</code> for the 8 scenes in <code>video/images/plan.json</code>: intro, chapter cards, two concept slides and the assignment. Diagram slides keep their full-size UML.</div></li>
+      <li><div>🚀 Commits <code>video/images</code> and the scene file, and pushes to <code>main</code>.</div></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>What it needs</h2>
+    <div class="needs">
+      <div><b>🍏 Apple Silicon Mac</b><span>M1 or later; mflux runs on MLX, so an Intel Mac Pro will not work.</span></div>
+      <div><b>💾 About 25 GB free</b><span>FLUX.2 Klein 4B is ~15 GB, gemma3:12b ~8 GB, downloaded on first run.</span></div>
+      <div><b>🧰 uv and Ollama</b><span><code>brew install uv ollama</code></span></div>
+      <div><b>🔑 Push access</b><span>git on the Mac must be able to push to the repo.</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Then</h2>
+    <p>Tell Claude the images are pushed. The Linux build pulls them, keeps them (because <code>video/images/prompts.json</code> now exists), re-renders the video and redeploys this site.</p>
+  </section>
+</div>
+<script>
+document.getElementById('copy').addEventListener('click', async e => {
+  const text = document.getElementById('one').textContent;
+  try { await navigator.clipboard.writeText(text); e.target.textContent = 'Copied'; }
+  catch { const r = document.createRange(); r.selectNodeContents(document.getElementById('one'));
+          const s = getSelection(); s.removeAllRanges(); s.addRange(r); e.target.textContent = 'Selected'; }
+  setTimeout(() => { e.target.textContent = 'Copy'; }, 1800);
+});
+</script>
+</body>
+</html>
