@@ -5,7 +5,7 @@
     "motif": "burst",
     "seed": 101,
     "engine": "Pillow procedural (CPU)",
-    "seconds": 9.62,
+    "seconds": 7.48,
     "file": "01.png"
   },
   {
@@ -14,7 +14,7 @@
     "motif": "grid",
     "seed": 103,
     "engine": "Pillow procedural (CPU)",
-    "seconds": 9.54,
+    "seconds": 7.51,
     "file": "03.png"
   },
   {
@@ -23,7 +23,7 @@
     "motif": "tangle",
     "seed": 104,
     "engine": "Pillow procedural (CPU)",
-    "seconds": 7.05,
+    "seconds": 6.78,
     "file": "04.png"
   },
   {
@@ -32,7 +32,7 @@
     "motif": "chain",
     "seed": 105,
     "engine": "Pillow procedural (CPU)",
-    "seconds": 7.65,
+    "seconds": 7.68,
     "file": "05.png"
   },
   {
@@ -41,7 +41,7 @@
     "motif": "chain",
     "seed": 108,
     "engine": "Pillow procedural (CPU)",
-    "seconds": 7.35,
+    "seconds": 7.37,
     "file": "08.png"
   },
   {
@@ -50,7 +50,7 @@
     "motif": "tree",
     "seed": 114,
     "engine": "Pillow procedural (CPU)",
-    "seconds": 8.03,
+    "seconds": 7.93,
     "file": "14.png"
   },
   {
@@ -59,16 +59,16 @@
     "motif": "burst",
     "seed": 118,
     "engine": "Pillow procedural (CPU)",
-    "seconds": 7.87,
+    "seconds": 7.72,
     "file": "18.png"
   },
   {
     "scene": 25,
-    "title": "Try it this week",
+    "title": "Your assignment",
     "motif": "tree",
     "seed": 125,
     "engine": "Pillow procedural (CPU)",
-    "seconds": 8.01,
+    "seconds": 7.89,
     "file": "25.png"
   }
 ]

@@ -28,7 +28,7 @@ from kokoro_onnx import Kokoro
 ROOT = Path(__file__).resolve().parent.parent
 MODEL_DIR = Path(os.environ.get("KOKORO_DIR", ROOT / "models" / "kokoro"))
 PORT = int(os.environ.get("KOKORO_PORT", "8880"))
-PAUSE = float(os.environ.get("KOKORO_PAUSE", "0.3"))  # seconds of silence between sentences
+PAUSE = float(os.environ.get("KOKORO_PAUSE", "0.45"))  # seconds of silence between sentences
 
 print(f"loading Kokoro from {MODEL_DIR} ...", flush=True)
 t0 = time.perf_counter()

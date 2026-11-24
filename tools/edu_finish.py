@@ -7,7 +7,8 @@ narrated slide lesson (no presenter footage, no music):
   1. Voice chain    highpass 75 Hz -> 2.4:1 compression -> light de-ess
                     + thin pink-noise room-tone bed (no digital silence at cuts)
                     -> two-pass loudnorm to -14 LUFS, true peak -1.5 dBTP (sample peak <= -0.9)
-  2. Captions       SRT from the narration + per-scene timing (render's .timeline.json)
+  2. Captions       SRT + small animated captions burned in (ASS karaoke, word-by-word fill),
+                    timed per sentence from the measured speech segments (.timeline.json)
   3. Chapters       YouTube chapters (0:00 first, >= 3, each >= 10 s) + description.md
   4. QA             LUFS / sample peak / flashes per second / words per minute -> qa.json,
                     and qa_sheet.jpg (one frame every 12 s) for the eye check
@@ -65,52 +66,101 @@ def ts(t: float, srt: bool = True) -> str:
     return f"{int(mnt)}:{int(s):02}" if h == 0 else f"{int(h)}:{int(mnt):02}:{int(s):02}"
 
 
-def caption_chunks(text: str, max_chars: int = 84) -> list[str]:
-    """Sentences, split further at commas/words so a cue is at most 2 lines of ~42 chars."""
-    out = []
-    for sent in re.split(r"(?<=[.!?:])\s+", text.strip()):
-        words, cur = sent.split(), ""
-        for w in words:
-            if cur and len(cur) + 1 + len(w) > max_chars:
-                out.append(cur)
-                cur = w
-            else:
-                cur = f"{cur} {w}".strip()
-        if cur:
+def caption_chunks(text: str, max_chars: int = 46) -> list[str]:
+    """Split a sentence into short single-line cues (small captions, one line each)."""
+    out, cur = [], ""
+    for w in text.split():
+        if cur and len(cur) + 1 + len(w) > max_chars:
             out.append(cur)
+            cur = w
+        else:
+            cur = f"{cur} {w}".strip()
+    if cur:
+        out.append(cur)
     return out
-
-
-def two_lines(s: str, width: int = 42) -> str:
-    if len(s) <= width:
-        return s
-    cut = s.rfind(" ", 0, len(s) // 2 + 6)
-    return s[:cut] + "\n" + s[cut + 1:] if cut > 0 else s
 
 
 # Kokoro reads "Q three"; captions should show the written form (skill: fix technical terms by hand)
 CAPTION_FIXES = {"Q three": "Q3", "analyze": "analyse"}
+SENTENCE = re.compile(r"(?<=[.!?:])\s+")  # same split as tools/kokoro_server.py
 
 
-def write_srt(timeline: list, dst: Path) -> int:
-    cues, n = [], 0
+def caption_cues(timeline: list) -> list[tuple[float, float, str]]:
+    """(start, end, text) per cue. Sentence times come from the measured speech segments of each
+    scene (Kokoro pauses between sentences); cues inside a sentence share its time by length.
+    Animated scenes that show their own text (the assignment) get no captions."""
+    cues = []
     for sc in timeline:
+        if sc.get("animate") == "assignment" or not sc["narration"].strip():
+            continue
         text = sc["narration"]
         for a, b in CAPTION_FIXES.items():
             text = text.replace(a, b)
-        chunks = caption_chunks(text)
-        if not chunks:
-            continue
-        speak = sc["audio_seconds"] or (sc["end"] - sc["start"])
-        total = sum(len(c) for c in chunks)
-        t = sc["start"]
-        for c in chunks:
-            d = speak * len(c) / total
-            n += 1
-            cues.append(f"{n}\n{ts(t)} --> {ts(min(t + d, sc['end']))}\n{two_lines(c)}\n")
-            t += d
-    dst.write_text("\n".join(cues))
-    return n
+        sentences = [s for s in SENTENCE.split(text.strip()) if s]
+        segs = sc.get("speech") or []
+        if len(segs) == len(sentences):
+            spans = [(sc["start"] + s, sc["start"] + e) for s, e in segs]
+        else:  # fallback: share the spoken time by sentence length
+            speak = sc["audio_seconds"] or (sc["end"] - sc["start"])
+            total, t, spans = sum(len(s) for s in sentences), sc["start"], []
+            for s in sentences:
+                d = speak * len(s) / total
+                spans.append((t, t + d))
+                t += d
+        for sent, (s0, s1) in zip(sentences, spans):
+            chunks = caption_chunks(sent)
+            total, t = sum(len(c) for c in chunks), s0
+            for c in chunks:
+                d = (s1 - s0) * len(c) / total
+                cues.append((t, min(t + d, sc["end"]), c))
+                t += d
+    return cues
+
+
+def write_srt(cues: list, dst: Path) -> int:
+    dst.write_text("\n".join(f"{i}\n{ts(a)} --> {ts(b)}\n{c}\n"
+                             for i, (a, b, c) in enumerate(cues, 1)))
+    return len(cues)
+
+
+def ass_time(t: float) -> str:
+    h, rem = divmod(t, 3600)
+    m, s = divmod(rem, 60)
+    return f"{int(h)}:{int(m):02}:{s:05.2f}"
+
+
+ASS_HEAD = """[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+WrapStyle: 2
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Cap,DejaVu Sans,34,&H00FFFFFF,&H00B4B4B4,&H00120C08,&H96000000,-1,0,0,0,100,100,0,0,1,3,2,2,80,80,96,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+"""
+
+
+def write_ass(cues: list, dst: Path) -> None:
+    """Small animated captions: each cue fades and pops in, then fills word by word (karaoke)."""
+    lines = [ASS_HEAD]
+    for a, b, c in cues:
+        words = c.split()
+        dur_cs = max(1, int((b - a) * 100 * 0.92))
+        weights = [len(w) + 1 for w in words]
+        k = [max(1, round(dur_cs * w / sum(weights))) for w in weights]
+        body = " ".join(f"{{\\kf{n}}}{w.replace('{', '(').replace('}', ')')}" for n, w in zip(k, words))
+        anim = r"{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}"
+        lines.append(f"Dialogue: 0,{ass_time(a)},{ass_time(b)},Cap,,0,0,0,,{anim}{body}\n")
+    dst.write_text("".join(lines))
+
+
+def burn_captions(src: Path, ass: Path, dst: Path) -> None:
+    ff("-i", str(src), "-vf", f"ass={ass}", "-c:v", "libx264", "-preset", "veryfast", "-crf", "20",
+       "-pix_fmt", "yuv420p", "-c:a", "copy", "-movflags", "+faststart", str(dst))
 
 
 def chapters(timeline: list) -> list[tuple[float, str]]:
@@ -169,16 +219,24 @@ def main(scene_file: str, raw: str, final: str) -> None:
     raw_p, final_p = Path(raw), Path(final)
     timeline = json.loads(Path(f"{raw}.timeline.json").read_text())
     out_dir = final_p.parent
-    audio = finish_audio(raw_p, final_p)
     stem = final_p.with_suffix("")
-    n_cues = write_srt(timeline, Path(f"{stem}.srt"))
+    voiced = Path(f"{stem}.voiced.mp4")
+    audio = finish_audio(raw_p, voiced)
+    cues = caption_cues(timeline)
+    n_cues = write_srt(cues, Path(f"{stem}.srt"))
+    write_ass(cues, Path(f"{stem}.ass"))
+    burn_captions(voiced, Path(f"{stem}.ass"), final_p)
+    voiced.unlink()
     ch = chapters(timeline)
     desc = [data.get("objective", ""), "", "Chapters"] + [f"{ts(t, False)} {n}" for t, n in ch] + [
-        "", "Made locally with simpligen: narration by Kokoro-82M (af_heart, kokoro-onnx int8 on CPU),",
-        "slides drawn with Pillow, diagrams as SVG, background art generated procedurally on CPU.",
+        "", "Made locally: narration by Kokoro-82M (af_heart, kokoro-onnx int8 on CPU),",
+        "slides drawn with Pillow, UML diagrams as SVG, background art generated procedurally on CPU.",
+        "Captions are burned in; the SRT is included for platforms that want a caption track.",
         "No music used."]
     Path(f"{stem}.description.md").write_text("\n".join(desc) + "\n")
-    report = qa(final_p, timeline, out_dir) | {"audio": audio, "srt_cues": n_cues}
+    report = qa(final_p, timeline, out_dir) | {"audio": audio, "srt_cues": n_cues,
+               "sentence_timing": sum(len(sc.get("speech") or []) == len(
+                   [s for s in SENTENCE.split(sc["narration"].strip()) if s]) for sc in timeline)}
     Path(f"{stem}.qa.json").write_text(json.dumps(report, indent=2) + "\n")
     print(json.dumps(report, indent=2))
 

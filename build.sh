@@ -18,6 +18,9 @@ if ! curl -s -m 2 localhost:8880/v1/audio/voices >/dev/null; then
   until curl -s -m 2 localhost:8880/v1/audio/voices >/dev/null; do sleep 1; done
 fi
 python3 tools/make_svgs.py video/svg >/dev/null
-$PY tools/gen_images_local.py video/task-decomposition.json video/images
+# FLUX images made on the Mac (tools/gen_images.py writes prompts.json) win over CPU art
+if [ ! -f video/images/prompts.json ]; then
+  $PY tools/gen_images_local.py video/task-decomposition.json video/images
+fi
 $PY -m simpligen video/task-decomposition.json video/out/task-decomposition-raw.mp4
 $PY tools/edu_finish.py video/task-decomposition.json video/out/task-decomposition-raw.mp4 video/out/task-decomposition.mp4

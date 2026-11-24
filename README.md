@@ -44,7 +44,12 @@ The Claude links are private to the owner until shared from each page's Share me
 | 2. Turn one prompt into five | Show | Visible, checked steps |
 | 3. Decompose it yourself | Do | One job per step |
 | 4. Know when to use it | Apply | Decompose multi-stage work |
-| Recap & practice | Apply | stacked recap, one call to action |
+| Recap & assignment | Apply | stacked recap, animated assignment checklist (one call to action) |
+
+**Visual language:** colour emoji on every slide and inside every diagram; UML for the core ideas:
+a class + object diagram (decomposition), an activity diagram with guard conditions (the 5-step
+pipeline) and a sequence diagram (prompt chaining between you and Claude). Captions are small,
+burned in, and fill word by word as they are spoken.
 
 ## Build
 
@@ -55,14 +60,18 @@ The Claude links are private to the owner until shared from each page's Share me
 Steps it runs:
 
 1. **Voice:** `tools/kokoro_server.py` serves Kokoro-82M (kokoro-onnx int8, CPU) on `:8880` with the
-   same API simpligen expects from Kokoro-FastAPI. Voice `af_heart`.
-2. **Diagrams:** `tools/make_svgs.py` writes every SVG in `video/svg/` from data.
+   same API simpligen expects from Kokoro-FastAPI. Voice `af_heart`. Sentences are joined with a
+   0.45 s pause (`KOKORO_PAUSE`), which keeps the pace inside 140–170 words per minute.
+2. **Diagrams:** `tools/make_svgs.py` writes every SVG in `video/svg/` from data, UML included.
+   Emoji in an SVG are written as `<text data-emoji="SIZE" x y>E</text>`; simpligen cuts them out
+   before rsvg and draws them in colour with Pillow.
 3. **Background art:** `tools/gen_images_local.py` draws procedural "idea network" images on CPU
    (motif per scene in `video/images/plan.json`). This box has no GPU, so FLUX via mflux
    (`tools/gen_images.py`, Apple Silicon) is not used here.
 4. **Render:** `python -m simpligen video/task-decomposition.json …` (hard cuts: `"fade": 0`).
 5. **Finish:** `tools/edu_finish.py` applies the edu-film-edit voice chain (highpass 75 Hz, 2.4:1
-   compression, de-ess, pink-noise room tone, two-pass loudnorm to −14 LUFS), writes the SRT,
+   compression, de-ess, pink-noise room tone, two-pass loudnorm to −14 LUFS), burns in small
+   animated captions (ASS karaoke, timed per sentence from the measured pauses), writes the SRT,
    chapters and description, and runs QA.
 
 ## Changes to simpligen (v0.4.1, Linux)
@@ -71,6 +80,11 @@ Steps it runs:
 - Slide text wrapped by measured pixel width, so titles never run into diagrams
 - Intro icons settable per scene (`icons`), intro frames piped to ffmpeg (no PNG per frame on disk)
 - `chapter` scene field, project-level `fade` (0 = hard cuts), per-scene `.timeline.json` output
+- project-level `footer` (`""` = no footer text on slides)
+- colour emoji inside SVG diagrams
+- `animate: "assignment"` scene: checklist items revealed one per spoken sentence, with
+  self-drawing ticks and a progress bar
+- per-sentence speech timing (ffmpeg `silencedetect`) stored in the timeline
 
 ## Publish to GitHub Pages
 

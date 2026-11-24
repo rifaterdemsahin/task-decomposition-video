@@ -3,6 +3,7 @@
   "tts": "kokoro",
   "voice": "af_heart",
   "fade": 0,
+  "footer": "",
   "scenes": [
     {
       "title": "Task Decomposition",
@@ -242,13 +243,36 @@
       "narration": "And you decompose when the work is multi-stage, numeric, or high-stakes."
     },
     {
-      "title": "Try it this week",
-      "subtitle": "One real task, two ways",
-      "emoji": "🚀",
+      "title": "Your assignment",
+      "subtitle": "This week · one real task, two ways",
+      "emoji": "📝",
+      "animate": "assignment",
+      "items": [
+        [
+          "🎯",
+          "Pick one real task you'd send as one prompt"
+        ],
+        [
+          "🧪",
+          "Run it once as a single prompt"
+        ],
+        [
+          "🔗",
+          "Run it again as a chain, reasoning shown"
+        ],
+        [
+          "⚖️",
+          "Compare the two answers"
+        ],
+        [
+          "💬",
+          "Post your steps and what changed in Skool"
+        ]
+      ],
+      "image": "images/25.png",
       "bg": "#1E0B2E",
       "accent": "#C084FC",
-      "narration": "Your practice task: this week, take one real request you'd normally send Claude as a single prompt. Run it once as it is, then again as a chain of steps with the reasoning shown, and compare the answers. Post your step list, and what changed, in the Skool community. See you in the next lesson.",
-      "image": "images/25.png"
+      "narration": "Here's your assignment for this week. First, pick one real task you'd normally send Claude as a single prompt. Run it once, as a single prompt. Then run it again as a chain of steps, with the reasoning shown. Compare the two answers. And post your step list, and what changed, in the Skool community. See you in the next lesson."
     }
   ]
 }

@@ -6,6 +6,8 @@
 3. The scene file gets an "image" field; prompts + timings go to prompts.json.
 
 usage: python3 tools/gen_images.py examples/demo.json examples/images
+If OUT_DIR/plan.json exists ({"<scene number>": "<motif>"}), only those scenes get an image
+(diagram slides keep their full-size diagram).
 """
 from __future__ import annotations
 
@@ -48,8 +50,12 @@ def main(scene_file: str, out_dir: str) -> None:
     sf, od = Path(scene_file), Path(out_dir)
     od.mkdir(parents=True, exist_ok=True)
     data = json.loads(sf.read_text())
+    plan = od / "plan.json"
+    wanted = {int(k) for k in json.loads(plan.read_text())} if plan.exists() else None
     log = []
     for i, sc in enumerate(data["scenes"]):
+        if wanted is not None and i + 1 not in wanted:
+            continue
         t0 = time.perf_counter()
         prompt = llm_prompt(sc["title"], sc.get("narration", ""))
         llm_s = round(time.perf_counter() - t0, 1)

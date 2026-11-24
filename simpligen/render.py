@@ -10,6 +10,7 @@ import io
 import json
 import os
 import shutil
+import re
 import subprocess
 import sys
 import tempfile
@@ -60,6 +61,7 @@ class Scene:
     animate: str | None = None  # "intro" = animated title sequence (simpligen.animate)
     icons: list | None = None  # intro only: [[emoji, label], ...] row of feature icons
     chapter: str | None = None  # marks a chapter start (YouTube chapter name)
+    items: list | None = None  # animate "assignment": [[emoji, text], ...] revealed one per sentence
 
 
 @dataclass
@@ -68,6 +70,7 @@ class Project:
     voice: str | None = None
     tts: str = "auto"  # auto | kokoro | say | espeak-ng | espeak | none
     fade: float = FADE  # seconds of fade in/out per slide; 0 = hard cuts
+    footer: str = f"simpligen v{VERSION}"  # bottom-left text on every slide; "" = none
     base_dir: Path = field(default_factory=Path.cwd)
 
 
@@ -83,7 +86,9 @@ def load_project(path: str | Path) -> Project:
         scenes.append(Scene(**s))
     cfg = data if isinstance(data, dict) else {}
     return Project(scenes=scenes, voice=cfg.get("voice"), tts=cfg.get("tts", "auto"),
-                   fade=float(cfg.get("fade", FADE)), base_dir=Path(path).resolve().parent)
+                   fade=float(cfg.get("fade", FADE)),
+                   footer=cfg.get("footer", f"simpligen v{VERSION}"),
+                   base_dir=Path(path).resolve().parent)
 
 
 def _font(size: int) -> ImageFont.FreeTypeFont:
@@ -93,16 +98,31 @@ def _font(size: int) -> ImageFont.FreeTypeFont:
     return ImageFont.load_default(size)
 
 
+# <text data-emoji="SIZE" x="X" y="Y">E</text> in an SVG = colour emoji E, SIZE svg units tall,
+# centred on (X, Y). rsvg has no colour emoji, so these are cut out and drawn with Pillow.
+EMOJI_IN_SVG = re.compile(r'<text data-emoji="([\d.]+)" x="([\d.]+)" y="([\d.]+)"[^>]*>(.*?)</text>')
+
+
 def rasterize_svg(svg_path: Path, box: tuple[int, int] = SVG_BOX) -> Image.Image:
-    """SVG -> RGBA image that fits inside `box`, keeping aspect ratio."""
+    """SVG -> RGBA image that fits inside `box`, keeping aspect ratio (+ colour emoji)."""
     if not svg_path.exists():
         raise FileNotFoundError(f"scene svg not found: {svg_path}")
     if not shutil.which("rsvg-convert"):
         raise RuntimeError("rsvg-convert is required for svg scenes (brew install librsvg)")
-    png = subprocess.run(["rsvg-convert", "-a", "-w", str(box[0]), "-h", str(box[1]),
-                          str(svg_path)], capture_output=True, check=True).stdout
+    src = svg_path.read_text()
+    emojis = EMOJI_IN_SVG.findall(src)
+    png = subprocess.run(["rsvg-convert", "-a", "-w", str(box[0]), "-h", str(box[1])],
+                         input=EMOJI_IN_SVG.sub("", src).encode(), capture_output=True,
+                         check=True).stdout
     img = Image.open(io.BytesIO(png)).convert("RGBA")
     img.thumbnail(box)
+    vb = re.search(r'viewBox="[\d.]+ [\d.]+ ([\d.]+)', src)
+    scale = img.width / float(vb.group(1) if vb else img.width)
+    for size, x, y, ch in emojis:
+        e = render_emoji(ch, max(8, round(float(size) * scale)))
+        if e is not None:
+            img.alpha_composite(e, (round(float(x) * scale - e.width / 2),
+                                    round(float(y) * scale - e.height / 2)))
     return img
 
 
@@ -159,7 +179,7 @@ def wrap_px(text: str, font: ImageFont.FreeTypeFont, max_w: int) -> list[str]:
 
 
 def draw_slide(scene: Scene, index: int, total: int, out: Path,
-               base_dir: Path | None = None) -> Path:
+               base_dir: Path | None = None, footer: str = f"simpligen v{VERSION}") -> Path:
     base_dir = base_dir or Path.cwd()
     img = background(scene, base_dir)
     d = ImageDraw.Draw(img, "RGBA")
@@ -195,7 +215,8 @@ def draw_slide(scene: Scene, index: int, total: int, out: Path,
     for line in sub_lines:
         d.text((144, y + 24), line, font=sub_font, fill=scene.accent)
         y += 58
-    d.text((140, H - 90), f"simpligen v{VERSION}", font=small, fill=scene.accent)
+    if footer:
+        d.text((140, H - 90), footer, font=small, fill=scene.accent)
     d.text((W - 220, H - 90), f"{index + 1} / {total}", font=small, fill=scene.fg)
     img.save(out)
     return out
@@ -264,6 +285,24 @@ def media_duration(path: Path) -> float:
     return float(r.stdout.strip())
 
 
+def speech_segments(wav: Path, noise_db: int = -40, min_gap: float = 0.35) -> list[list[float]]:
+    """[start, end] of each spoken stretch (sentences are separated by Kokoro pauses)."""
+    log = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", str(wav), "-af",
+                          f"silencedetect=noise={noise_db}dB:d={min_gap}", "-f", "null", "-"],
+                         capture_output=True, text=True).stderr
+    starts = [float(v) for v in re.findall(r"silence_start: (-?[\d.]+)", log)]
+    ends = [float(v) for v in re.findall(r"silence_end: ([\d.]+)", log)]
+    total = media_duration(wav)
+    segs, cur = [], 0.0
+    for s, e in zip(starts, ends + [total] * (len(starts) - len(ends))):
+        if s - cur > 0.05:
+            segs.append([round(max(cur, 0.0), 3), round(s, 3)])
+        cur = e
+    if total - cur > 0.05:
+        segs.append([round(cur, 3), round(total, 3)])
+    return segs
+
+
 def scene_length(scene: Scene, audio_seconds: float | None) -> float:
     if scene.duration:
         return float(scene.duration)
@@ -303,21 +342,30 @@ def render(scene_file: str | Path, output: str | Path, workdir: Path | None = No
         wav = tmp / f"s{i:03}.wav"
         has_audio = synthesize(sc.narration, wav, project.voice, engine)
         audio_secs = media_duration(wav) if has_audio else None
+        speech = speech_segments(wav) if has_audio else []
         secs = scene_length(sc, audio_secs)
-        if sc.animate == "intro":
-            secs = max(secs, 4.0)  # same floor render_intro_clip applies
+        if sc.animate in ("intro", "assignment"):
+            secs = max(secs, 4.0)  # same floor the animated clips apply
         timeline.append({"scene": i + 1, "start": round(t_cursor, 3), "end": round(t_cursor + secs, 3),
                          "audio_seconds": round(audio_secs or 0.0, 3), "title": sc.title,
-                         "chapter": sc.chapter, "narration": sc.narration})
+                         "chapter": sc.chapter, "animate": sc.animate, "speech": speech,
+                         "narration": sc.narration})
         t_cursor += secs
         if sc.animate == "intro":
             from .animate import render_intro_clip
             t_anim = time.perf_counter()
             clips.append(render_intro_clip(sc, project.base_dir, wav if has_audio else None,
-                                           secs, tmp / f"c{i:03}.mp4", tmp))
+                                           secs, tmp / f"c{i:03}.mp4", tmp, project.footer))
             animated_seconds += time.perf_counter() - t_anim
             continue
-        png = draw_slide(sc, i, total, tmp / f"s{i:03}.png", project.base_dir)
+        if sc.animate == "assignment":
+            from .animate import render_assignment_clip
+            t_anim = time.perf_counter()
+            clips.append(render_assignment_clip(sc, project.base_dir, wav if has_audio else None,
+                                                secs, tmp / f"c{i:03}.mp4", speech))
+            animated_seconds += time.perf_counter() - t_anim
+            continue
+        png = draw_slide(sc, i, total, tmp / f"s{i:03}.png", project.base_dir, project.footer)
         clips.append(render_clip(png, wav if has_audio else None, secs, tmp / f"c{i:03}.mp4",
                                  project.fade))
     listing = tmp / "list.txt"
