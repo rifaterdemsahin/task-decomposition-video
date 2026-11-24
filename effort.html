@@ -88,7 +88,8 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
       <li><time>16:47</time><div><b>QA on draft 2</b><span>6 of 7 checks pass. Pace 175 words/min, above the 140–170 target.</span></div></li>
       <li><time>16:49</time><div><b>Pacing fix, final build</b><span>0.3 s pause between sentences, as the skill prescribes; full rebuild with <code>build.sh</code>.</span></div></li>
       <li><time>16:59</time><div><b>Final video</b><span>4 min 55 s, built in 10 min 28 s. −14.0 LUFS, peak −1.4 dBFS, 0 flashes, 6 chapters. Pace 170.6 words/min, 0.6 over target.</span></div></li>
-      <li class="user"><time>17:00</time><div><b>GitHub Pages deploy</b><span>gh logged in with the token from Azure Key Vault; site pushed to the <code>gh-pages</code> branch.</span></div></li>
+      <li class="user"><time>17:00</time><div><b>GitHub Pages deploy</b><span>gh logged in with the token from Azure Key Vault. The Pages workflow uploaded the repo root (404); fixed to deploy <code>site/</code>.</span></div></li>
+      <li class="user"><time>17:03</time><div><b>Live site tested</b><span><code>tests/test_site.py</code>: 9 tests pass against the live URL, also run by a verify job after every deploy.</span></div></li>
     </ol>
     <p class="legend">Filled dots mark your messages. Times come from file and commit timestamps on the VM.</p>
   </section>
