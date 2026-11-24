@@ -1,12 +1,12 @@
 {
   "lufs": -14.0,
-  "sample_peak_dbfs": -1.2,
+  "sample_peak_dbfs": -1.5,
   "max_flashes_per_sec": 0,
   "words": 803,
-  "speaking_seconds": 292.2,
-  "wpm": 164.9,
-  "video_seconds": 307.23,
-  "hook_seconds": 26.38,
+  "speaking_seconds": 292.6,
+  "wpm": 164.7,
+  "video_seconds": 307.58,
+  "hook_seconds": 26.45,
   "chapters": [
     {
       "at": "0:00",
@@ -16,12 +16,12 @@
     {
       "at": "0:26",
       "name": "Spot the hidden jobs",
-      "seconds": 77.2
+      "seconds": 77.4
     },
     {
       "at": "1:43",
       "name": "Turn one prompt into five",
-      "seconds": 92.9
+      "seconds": 92.8
     },
     {
       "at": "3:16",
@@ -31,10 +31,10 @@
     {
       "at": "4:02",
       "name": "Know when to decompose",
-      "seconds": 26.1
+      "seconds": 26.2
     },
     {
-      "at": "4:28",
+      "at": "4:29",
       "name": "Recap and practice",
       "seconds": 38.4
     }
@@ -53,7 +53,7 @@
   "audio": {
     "measured_before": {
       "lufs": -18.38,
-      "true_peak": -0.21
+      "true_peak": 0.98
     }
   },
   "srt_cues": 136,

@@ -71,7 +71,8 @@ viewBox `0 0 840 760`, dark/transparent background, `frame("sd  Name", COLOR)` t
 
 | Need | Run |
 |---|---|
-| FLUX backgrounds (Apple Silicon Mac) | `curl -fsSL https://raw.githubusercontent.com/<owner>/<slug>-video/main/tools/mac_flux.sh \| bash` |
+| Full build on an Apple Silicon Mac | `git pull && python3 tools/gen_images.py video/<slug>.json video/images && ./build.sh && tools/build_site.sh --publish` (FLUX ≈ 35 s per image, build ≈ 2.5 min on an M-series Mac) |
+| FLUX backgrounds only (Apple Silicon Mac) | `curl -fsSL https://raw.githubusercontent.com/<owner>/<slug>-video/main/tools/mac_flux.sh \| bash` |
 | Rebuild everything | `./build.sh` (≈ 10–12 min for 25 scenes on 4 CPUs) |
 | One slide preview | `python - <<'EOF'` → `R.draw_slide(scene, i, n, Path("x.png"), base_dir, footer="")` |
 | Tests | `.venv/bin/python -m unittest tests.test_render tests.test_site` |
@@ -91,6 +92,10 @@ viewBox `0 0 840 760`, dark/transparent background, `frame("sd  Name", COLOR)` t
 | Artifact page renders in quirks mode on Pages | artifact HTML has no doctype; `build_site.sh` wraps it |
 | QA `wpm_in_140_170` false | raise `KOKORO_PAUSE` (0.3 → 0.45) and rebuild |
 | FLUX "not available" on Linux VM | mflux needs Apple Silicon; use the Mac one-liner, keep CPU art meanwhile |
+| Mac: `pip` can't resolve `kokoro-onnx` | Homebrew `python3` is 3.15; `build.sh` builds `.venv` with `python3.12` (`brew install python@3.12`) |
+| Mac: `No option name near '…ass'` at caption burn | Homebrew `ffmpeg` lacks libass; `brew install ffmpeg-full` (keg-only); `edu_finish.py` finds it, or set `FFMPEG` |
+| Mac: new FLUX images saved as `NN_1.png`, video shows old art | mflux won't overwrite; `gen_images.py` deletes the old file first |
+| `wpm` ≈ 171 although `KOKORO_PAUSE` is set | a Kokoro-FastAPI container on `:8880` (no pauses) was used; `build.sh` runs the repo server on `:8881` (`KOKORO_PORT`) |
 
 ## Red flags: stop and check
 

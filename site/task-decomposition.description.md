@@ -6,9 +6,9 @@ Chapters
 1:43 Turn one prompt into five
 3:16 Decompose a task yourself
 4:02 Know when to decompose
-4:28 Recap and practice
+4:29 Recap and practice
 
 Made locally: narration by Kokoro-82M (af_heart, kokoro-onnx int8 on CPU),
-slides drawn with Pillow, UML diagrams as SVG, background art generated procedurally on CPU.
+slides drawn with Pillow, UML diagrams as SVG, background images by FLUX.2 Klein 4B (mflux, Apple Silicon), prompts by gemma3:12b.
 Captions are burned in; the SRT is included for platforms that want a caption track.
 No music used.

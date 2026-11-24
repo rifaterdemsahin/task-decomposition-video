@@ -72,7 +72,7 @@ Then ask Claude Code to use the `skool-course-video-creator` skill with your top
 
 Steps it runs:
 
-1. **Voice:** `tools/kokoro_server.py` serves Kokoro-82M (kokoro-onnx int8, CPU) on `:8880` with the
+1. **Voice:** `tools/kokoro_server.py` serves Kokoro-82M (kokoro-onnx int8, CPU) on `:8881` with the
    same API simpligen expects from Kokoro-FastAPI. Voice `af_heart`. Sentences are joined with a
    0.45 s pause (`KOKORO_PAUSE`), which keeps the pace inside 140–170 words per minute.
 2. **Diagrams:** `tools/make_svgs.py` writes every SVG in `video/svg/` from data, UML included.
@@ -118,8 +118,13 @@ Mac gotchas, all hit on the first Mac build (2026-11-24):
 | `pip` can't resolve `kokoro-onnx` | Homebrew's `python3` is 3.15, too new for kokoro-onnx. `build.sh` builds `.venv` with `python3.12` when present |
 | `No option name near '…ass'` at the caption burn | Homebrew's `ffmpeg` has no libass. `brew install ffmpeg-full` (keg-only, sits alongside the plain `ffmpeg`); `edu_finish.py` uses it automatically, or set `FFMPEG=/path/to/ffmpeg` |
 | New images land as `01_1.png` and the video still shows the old art | mflux won't overwrite. `gen_images.py` now deletes the old file first |
+| QA `wpm` 170.6, fails | the Docker Kokoro on `:8880` was used. `build.sh` now runs the repo server on `:8881` |
 
-A Kokoro server already running on `:8880` is reused; otherwise `build.sh` starts one.
+Measured on this Mac: FLUX 33.8–38.8 s per image (8 images, 5 min 12 s with prompts); `./build.sh`
+2 min 24 s; QA 7/7 (−14.0 LUFS, 164.7 wpm, 307.6 s).
+
+`build.sh` always uses this repo's Kokoro server, on `:8881` (`KOKORO_PORT`). A Kokoro-FastAPI
+Docker container on `:8880` has no 0.45 s sentence pause; using it gave 170.6 wpm and failed QA.
 
 ## FLUX images only, from the Mac (one-liner)
 

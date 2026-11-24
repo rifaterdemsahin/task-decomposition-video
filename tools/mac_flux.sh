@@ -33,4 +33,4 @@ python3 tools/gen_images.py video/task-decomposition.json video/images
 echo "🚀 pushing"
 git add video/images video/task-decomposition.json
 git commit -m "FLUX.2 Klein backgrounds" && git push
-echo "✅ done: tell Claude to pull and rebuild"
+echo "✅ done: tell Claude to pull and rebuild (or build here: see README \"Build on an Apple Silicon Mac\")"

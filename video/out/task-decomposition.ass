@@ -13,136 +13,136 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 Dialogue: 0,0:00:00.00,0:00:00.81,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf25}One {\kf49}prompt.
 Dialogue: 0,0:00:01.49,0:00:02.57,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf28}Five {\kf38}hidden {\kf33}jobs.
 Dialogue: 0,0:00:03.24,0:00:04.57,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf16}And {\kf12}an {\kf28}answer {\kf16}you {\kf24}can't {\kf28}check.
-Dialogue: 0,0:00:05.18,0:00:07.61,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf36}That's {\kf26}what {\kf41}happens {\kf26}when {\kf21}you {\kf21}ask {\kf36}Claude {\kf16}to
-Dialogue: 0,0:00:07.61,0:00:10.15,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf41}analyse {\kf10}a {\kf41}quarter {\kf16}of {\kf36}market {\kf26}data {\kf21}and {\kf41}propose
-Dialogue: 0,0:00:10.15,0:00:11.65,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf61}strategies, {\kf20}all {\kf15}in {\kf20}one {\kf20}go.
-Dialogue: 0,0:00:12.25,0:00:13.31,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf24}Here's {\kf21}where {\kf21}we're {\kf31}heading:
-Dialogue: 0,0:00:13.96,0:00:16.67,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf21}the {\kf26}same {\kf42}request {\kf16}as {\kf26}five {\kf32}small {\kf37}steps, {\kf26}each {\kf21}one
-Dialogue: 0,0:00:16.67,0:00:17.25,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf54}checkable.
-Dialogue: 0,0:00:17.85,0:00:20.29,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf15}By {\kf20}the {\kf20}end {\kf15}of {\kf25}this {\kf40}lesson, {\kf35}you'll {\kf15}be {\kf25}able {\kf15}to
-Dialogue: 0,0:00:20.29,0:00:22.84,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf30}break {\kf20}any {\kf20}big {\kf45}business {\kf40}request {\kf25}into {\kf10}a {\kf30}chain {\kf15}of
-Dialogue: 0,0:00:22.84,0:00:25.39,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf30}steps {\kf25}that {\kf35}Claude {\kf25}gets {\kf35}right, {\kf20}and {\kf25}that {\kf20}you {\kf20}can
-Dialogue: 0,0:00:25.39,0:00:25.78,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf35}verify.
-Dialogue: 0,0:00:26.38,0:00:27.12,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf41}Chapter {\kf26}one.
-Dialogue: 0,0:00:27.84,0:00:29.14,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf27}Spot {\kf22}the {\kf38}hidden {\kf32}jobs.
-Dialogue: 0,0:00:29.74,0:00:31.54,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf30}Here's {\kf8}a {\kf30}prompt {\kf21}many {\kf13}of {\kf13}us {\kf21}have {\kf30}typed:
-Dialogue: 0,0:00:32.16,0:00:35.18,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf50}analyse {\kf25}our {\kf19}Q3 {\kf44}market {\kf31}data {\kf25}and {\kf50}propose {\kf31}five
-Dialogue: 0,0:00:35.18,0:00:35.95,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf71}strategies.
-Dialogue: 0,0:00:36.51,0:00:38.84,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf15}It {\kf30}looks {\kf25}like {\kf20}one {\kf45}request, {\kf20}but {\kf15}it {\kf30}hides {\kf15}at
-Dialogue: 0,0:00:38.84,0:00:39.73,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf29}least {\kf24}five {\kf29}jobs:
-Dialogue: 0,0:00:40.31,0:00:42.80,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf26}read {\kf21}the {\kf31}data, {\kf26}spot {\kf21}the {\kf41}trends, {\kf41}explain {\kf21}the
-Dialogue: 0,0:00:42.80,0:00:44.99,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf41}causes, {\kf46}generate {\kf36}ideas, {\kf21}and {\kf26}rank {\kf31}them.
-Dialogue: 0,0:00:45.57,0:00:48.08,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf31}Asked {\kf15}in {\kf20}one {\kf41}breath, {\kf20}the {\kf31}model {\kf20}has {\kf15}to {\kf36}juggle
-Dialogue: 0,0:00:48.08,0:00:49.21,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf20}all {\kf15}of {\kf25}them {\kf15}at {\kf30}once.
-Dialogue: 0,0:00:49.79,0:00:52.11,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf21}The {\kf32}usual {\kf37}result {\kf16}is {\kf43}generic {\kf64}strategies,
-Dialogue: 0,0:00:52.11,0:00:54.73,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf43}skipped {\kf37}steps, {\kf16}or {\kf43}numbers {\kf27}that {\kf27}were {\kf32}never {\kf16}in
-Dialogue: 0,0:00:54.73,0:00:55.26,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf20}the {\kf29}data.
-Dialogue: 0,0:00:55.86,0:00:58.09,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf29}Chain {\kf14}of {\kf38}thought {\kf29}means {\kf33}asking {\kf19}the {\kf29}model {\kf14}to
-Dialogue: 0,0:00:58.09,0:01:00.38,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf29}write {\kf19}out {\kf19}its {\kf48}reasoning {\kf33}before {\kf14}it {\kf29}gives {\kf19}the
-Dialogue: 0,0:01:00.38,0:01:00.75,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf34}answer.
-Dialogue: 0,0:01:01.34,0:01:03.72,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf24}Each {\kf24}step {\kf15}is {\kf15}on {\kf19}the {\kf29}page, {\kf15}so {\kf29}later {\kf29}steps {\kf19}can
-Dialogue: 0,0:01:03.72,0:01:06.05,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf29}build {\kf15}on {\kf39}earlier {\kf29}ones, {\kf19}and {\kf19}you {\kf19}can {\kf24}read {\kf19}the
-Dialogue: 0,0:01:06.05,0:01:08.49,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf49}reasoning {\kf15}to {\kf19}see {\kf39}exactly {\kf29}where {\kf15}it {\kf24}went {\kf34}wrong.
-Dialogue: 0,0:01:09.06,0:01:11.75,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf28}Same {\kf39}model, {\kf28}same {\kf34}data, {\kf22}but {\kf28}more {\kf17}of {\kf22}the {\kf28}work
-Dialogue: 0,0:01:11.75,0:01:14.45,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf45}happens {\kf22}out {\kf34}loud, {\kf34}which {\kf45}usually {\kf34}means {\kf34}fewer
-Dialogue: 0,0:01:14.45,0:01:16.32,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf39}errors {\kf17}on {\kf61}multi-step {\kf55}problems.
-Dialogue: 0,0:01:16.92,0:01:19.13,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf26}Task {\kf73}decomposition {\kf31}works {\kf21}one {\kf31}level {\kf21}up.
-Dialogue: 0,0:01:19.71,0:01:22.17,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf41}Instead {\kf15}of {\kf20}one {\kf36}prompt {\kf31}doing {\kf61}everything, {\kf20}you
-Dialogue: 0,0:01:22.17,0:01:24.28,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf31}break {\kf20}the {\kf41}project {\kf26}into {\kf36}small, {\kf41}ordered
-Dialogue: 0,0:01:24.28,0:01:24.85,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf52}sub-tasks.
-Dialogue: 0,0:01:25.42,0:01:28.01,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf26}Each {\kf21}one {\kf21}has {\kf10}a {\kf31}clear {\kf36}input, {\kf10}a {\kf36}single {\kf26}job, {\kf21}and
-Dialogue: 0,0:01:28.01,0:01:28.87,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf10}a {\kf30}clear {\kf40}output.
-Dialogue: 0,0:01:29.43,0:01:31.93,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf29}Chain {\kf15}of {\kf39}thought {\kf44}improves {\kf19}the {\kf49}reasoning {\kf34}inside
-Dialogue: 0,0:01:31.93,0:01:32.31,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf8}a {\kf26}step.
-Dialogue: 0,0:01:32.94,0:01:35.52,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf74}Decomposition {\kf47}improves {\kf21}the {\kf53}structure {\kf42}between
-Dialogue: 0,0:01:35.52,0:01:35.87,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf32}steps.
-Dialogue: 0,0:01:36.42,0:01:37.37,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf34}You'll {\kf24}want {\kf29}both.
-Dialogue: 0,0:01:37.97,0:01:38.59,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf56}Takeaway:
-Dialogue: 0,0:01:39.33,0:01:42.15,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf17}if {\kf11}a {\kf44}request {\kf33}hides {\kf44}several {\kf33}jobs, {\kf28}give {\kf28}each {\kf22}job
-Dialogue: 0,0:01:42.15,0:01:42.94,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf21}its {\kf21}own {\kf31}step.
-Dialogue: 0,0:01:43.55,0:01:44.32,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf44}Chapter {\kf27}two.
-Dialogue: 0,0:01:45.00,0:01:46.58,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf27}Turn {\kf21}one {\kf37}prompt {\kf27}into {\kf32}five.
-Dialogue: 0,0:01:47.18,0:01:48.41,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf29}Here's {\kf17}the {\kf29}before {\kf38}version:
-Dialogue: 0,0:01:49.05,0:01:51.76,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf24}one {\kf49}prompt, {\kf24}the {\kf18}Q3 {\kf30}data {\kf43}pasted {\kf24}in, {\kf24}and {\kf12}a
-Dialogue: 0,0:01:51.76,0:01:53.66,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf48}request {\kf24}for {\kf30}five {\kf72}strategies.
-Dialogue: 0,0:01:54.25,0:01:55.25,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf17}You {\kf13}do {\kf17}get {\kf13}an {\kf33}answer.
-Dialogue: 0,0:01:55.91,0:01:58.46,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf20}But {\kf20}you {\kf30}can't {\kf25}tell {\kf30}which {\kf40}numbers {\kf25}came {\kf25}from {\kf20}the
-Dialogue: 0,0:01:58.46,0:02:01.01,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf30}data, {\kf20}why {\kf30}these {\kf25}five {\kf25}were {\kf40}chosen, {\kf15}or {\kf30}where {\kf20}the
-Dialogue: 0,0:02:01.01,0:02:01.90,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf48}reasoning {\kf33}broke.
-Dialogue: 0,0:02:02.50,0:02:03.71,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf19}Now {\kf19}the {\kf29}after {\kf43}version.
-Dialogue: 0,0:02:04.35,0:02:04.98,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf28}Step {\kf28}one:
-Dialogue: 0,0:02:05.67,0:02:08.01,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf37}extract {\kf19}the {\kf19}key {\kf42}metrics, {\kf19}and {\kf28}quote {\kf19}the {\kf33}source
-Dialogue: 0,0:02:08.01,0:02:08.27,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf23}rows.
-Dialogue: 0,0:02:08.85,0:02:09.53,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf31}Step {\kf31}two:
-Dialogue: 0,0:02:10.25,0:02:11.72,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf22}find {\kf17}the {\kf26}three {\kf35}biggest {\kf35}trends.
-Dialogue: 0,0:02:12.29,0:02:13.00,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf27}Step {\kf37}three:
-Dialogue: 0,0:02:13.68,0:02:15.67,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf37}explain {\kf18}the {\kf32}likely {\kf27}cause {\kf14}of {\kf23}each {\kf32}trend.
-Dialogue: 0,0:02:16.28,0:02:16.98,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf29}Step {\kf34}four:
-Dialogue: 0,0:02:17.69,0:02:20.45,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf61}brainstorm {\kf22}ten {\kf50}strategy {\kf44}options {\kf28}tied {\kf17}to {\kf33}those
-Dialogue: 0,0:02:20.45,0:02:20.88,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf39}causes.
-Dialogue: 0,0:02:21.44,0:02:22.17,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf30}Step {\kf37}five:
-Dialogue: 0,0:02:22.84,0:02:25.33,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf30}score {\kf25}them {\kf15}on {\kf35}impact {\kf20}and {\kf40}effort, {\kf20}and {\kf25}pick {\kf20}the
-Dialogue: 0,0:02:25.33,0:02:25.88,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf23}best {\kf27}five.
-Dialogue: 0,0:02:26.46,0:02:28.81,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf29}Every {\kf34}output {\kf39}becomes {\kf20}the {\kf25}next {\kf34}step's {\kf34}input.
-Dialogue: 0,0:02:29.41,0:02:30.45,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf48}Phrasing {\kf48}matters.
-Dialogue: 0,0:02:31.10,0:02:33.36,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf34}Plain, {\kf29}think {\kf24}step {\kf14}by {\kf29}step, {\kf29}helps {\kf10}a {\kf39}little.
-Dialogue: 0,0:02:33.98,0:02:35.56,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf30}Better {\kf13}is {\kf13}to {\kf26}spell {\kf17}out {\kf17}the {\kf30}steps:
-Dialogue: 0,0:02:36.20,0:02:38.34,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf25}first {\kf13}do {\kf25}this, {\kf21}then {\kf25}that, {\kf21}then {\kf17}the {\kf21}next {\kf29}thing.
-Dialogue: 0,0:02:39.03,0:02:40.38,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf21}Best {\kf17}for {\kf29}review {\kf12}is {\kf45}structure.
-Dialogue: 0,0:02:41.05,0:02:43.48,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf23}Ask {\kf40}Claude {\kf17}to {\kf23}put {\kf23}its {\kf57}reasoning {\kf40}inside
-Dialogue: 0,0:02:43.48,0:02:46.11,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf52}thinking {\kf29}tags {\kf23}and {\kf23}the {\kf34}final {\kf40}result {\kf40}inside
-Dialogue: 0,0:02:46.11,0:02:46.88,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf38}answer {\kf32}tags.
-Dialogue: 0,0:02:47.44,0:02:49.76,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf19}Now {\kf19}you {\kf19}can {\kf23}read {\kf19}the {\kf28}work, {\kf19}and {\kf23}your {\kf23}code {\kf14}or {\kf9}a
-Dialogue: 0,0:02:49.76,0:02:51.78,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf46}colleague {\kf18}can {\kf23}pull {\kf18}out {\kf23}just {\kf18}the {\kf37}answer.
-Dialogue: 0,0:02:52.38,0:02:54.97,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf21}For {\kf36}bigger {\kf52}projects, {\kf21}run {\kf26}each {\kf26}step {\kf16}as {\kf21}its {\kf21}own
-Dialogue: 0,0:02:54.97,0:02:56.99,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf36}prompt {\kf21}and {\kf26}pass {\kf21}the {\kf36}output {\kf46}forward.
-Dialogue: 0,0:02:57.60,0:02:58.87,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf26}That's {\kf26}called {\kf26}prompt {\kf37}chaining.
-Dialogue: 0,0:02:59.50,0:03:02.14,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf42}Between {\kf32}steps {\kf21}you {\kf21}can {\kf32}check {\kf21}the {\kf42}result, {\kf21}fix {\kf11}a
-Dialogue: 0,0:03:02.14,0:03:04.37,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf42}mistake {\kf37}early, {\kf16}or {\kf31}rerun {\kf26}just {\kf21}one {\kf31}step.
-Dialogue: 0,0:03:04.93,0:03:07.42,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf16}If {\kf26}step {\kf21}two {\kf31}found {\kf21}the {\kf31}wrong {\kf41}trends, {\kf21}you {\kf21}fix
-Dialogue: 0,0:03:07.42,0:03:09.62,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf26}step {\kf26}two, {\kf21}not {\kf21}the {\kf31}whole {\kf47}strategy {\kf31}deck.
-Dialogue: 0,0:03:10.22,0:03:10.83,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf56}Takeaway:
-Dialogue: 0,0:03:11.60,0:03:13.88,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf24}make {\kf19}the {\kf49}reasoning {\kf44}visible, {\kf19}and {\kf29}check {\kf24}each
-Dialogue: 0,0:03:13.88,0:03:15.83,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf34}output {\kf34}before {\kf19}the {\kf24}next {\kf24}step {\kf24}uses {\kf19}it.
-Dialogue: 0,0:03:16.43,0:03:17.24,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf39}Chapter {\kf35}three.
-Dialogue: 0,0:03:17.94,0:03:19.29,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf54}Decompose {\kf16}it {\kf54}yourself.
-Dialogue: 0,0:03:19.89,0:03:20.98,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf29}Pause {\kf19}the {\kf29}video {\kf24}now.
-Dialogue: 0,0:03:21.62,0:03:22.58,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf28}Take {\kf28}this {\kf33}task:
-Dialogue: 0,0:03:23.22,0:03:25.37,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf21}plan {\kf17}the {\kf29}launch {\kf13}of {\kf8}a {\kf17}new {\kf34}product {\kf21}next {\kf38}quarter.
-Dialogue: 0,0:03:26.03,0:03:27.56,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf29}Write {\kf24}four {\kf15}to {\kf19}six {\kf53}sub-tasks.
-Dialogue: 0,0:03:28.18,0:03:30.74,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf20}For {\kf26}each {\kf26}one, {\kf26}note {\kf20}its {\kf36}input, {\kf20}its {\kf41}output, {\kf20}and
-Dialogue: 0,0:03:30.74,0:03:32.84,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf20}how {\kf30}you'd {\kf30}check {\kf25}that {\kf36}output {\kf15}is {\kf36}right.
-Dialogue: 0,0:03:33.43,0:03:35.70,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf25}Then {\kf30}write {\kf20}the {\kf35}prompt {\kf20}for {\kf25}step {\kf25}one, {\kf30}using
-Dialogue: 0,0:03:35.70,0:03:37.42,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf44}explicit {\kf64}step-by-step {\kf49}phrasing.
-Dialogue: 0,0:03:38.02,0:03:40.19,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf22}Give {\kf40}yourself {\kf22}five {\kf40}minutes, {\kf22}then {\kf27}press {\kf27}play.
-Dialogue: 0,0:03:40.79,0:03:42.31,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf35}Here's {\kf20}one {\kf45}possible {\kf40}answer.
-Dialogue: 0,0:03:42.97,0:03:44.82,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf29}Define {\kf16}the {\kf37}audience {\kf16}and {\kf16}the {\kf29}launch {\kf25}goal.
-Dialogue: 0,0:03:45.47,0:03:46.62,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf24}Scan {\kf19}the {\kf62}competitors.
-Dialogue: 0,0:03:47.24,0:03:49.28,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf26}Write {\kf17}the {\kf52}positioning {\kf17}and {\kf17}the {\kf17}key {\kf39}message.
-Dialogue: 0,0:03:49.85,0:03:51.60,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf29}Choose {\kf38}channels {\kf17}and {\kf25}split {\kf17}the {\kf34}budget.
-Dialogue: 0,0:03:52.25,0:03:54.35,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf22}Then {\kf26}build {\kf18}the {\kf39}timeline {\kf18}and {\kf22}list {\kf18}the {\kf31}risks.
-Dialogue: 0,0:03:54.90,0:03:56.98,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf27}Yours {\kf18}may {\kf22}look {\kf49}different, {\kf18}and {\kf31}that's {\kf27}fine.
-Dialogue: 0,0:03:57.57,0:03:58.19,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf56}Takeaway:
-Dialogue: 0,0:03:58.94,0:04:01.75,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf33}every {\kf28}step {\kf28}gets {\kf22}one {\kf28}job, {\kf22}and {\kf17}an {\kf39}output {\kf22}you {\kf22}can
-Dialogue: 0,0:04:01.75,0:04:02.12,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf33}check.
-Dialogue: 0,0:04:02.72,0:04:03.51,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf41}Chapter {\kf31}four.
-Dialogue: 0,0:04:04.24,0:04:05.43,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf26}Know {\kf26}when {\kf16}to {\kf21}use {\kf21}it.
-Dialogue: 0,0:04:06.03,0:04:08.74,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf56}Decompose {\kf28}when {\kf23}the {\kf28}task {\kf23}has {\kf45}several {\kf45}stages,
-Dialogue: 0,0:04:08.74,0:04:11.06,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf50}involves {\kf50}numbers, {\kf39}drives {\kf17}an {\kf56}important
-Dialogue: 0,0:04:11.06,0:04:13.83,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf56}decision, {\kf17}or {\kf28}when {\kf45}someone {\kf34}needs {\kf17}to {\kf34}audit {\kf23}the
-Dialogue: 0,0:04:13.83,0:04:14.45,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf57}reasoning.
-Dialogue: 0,0:04:15.04,0:04:17.69,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf27}Keep {\kf16}it {\kf16}to {\kf22}one {\kf38}prompt {\kf22}for {\kf38}simple {\kf43}lookups {\kf22}and
-Dialogue: 0,0:04:17.69,0:04:20.23,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf33}quick {\kf54}rewrites, {\kf33}where {\kf33}extra {\kf33}steps {\kf27}only {\kf22}add
-Dialogue: 0,0:04:20.23,0:04:21.08,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf26}time {\kf21}and {\kf31}cost.
-Dialogue: 0,0:04:21.68,0:04:22.29,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf56}Takeaway:
-Dialogue: 0,0:04:23.07,0:04:25.64,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf52}decompose {\kf26}when {\kf21}the {\kf26}work {\kf21}has {\kf42}stages, {\kf47}numbers,
-Dialogue: 0,0:04:25.64,0:04:26.22,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf14}or {\kf39}stakes.
-Dialogue: 0,0:04:26.83,0:04:28.25,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf53}Otherwise, {\kf24}keep {\kf14}it {\kf39}simple.
-Dialogue: 0,0:04:28.85,0:04:29.68,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf35}Let's {\kf40}recap.
-Dialogue: 0,0:04:30.37,0:04:31.95,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf21}Big {\kf41}prompts {\kf26}hide {\kf26}many {\kf31}jobs.
-Dialogue: 0,0:04:32.55,0:04:34.98,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf31}Chain {\kf15}of {\kf41}thought {\kf20}and {\kf46}explicit {\kf46}phrasing {\kf25}make
-Dialogue: 0,0:04:34.98,0:04:36.00,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf20}the {\kf29}steps {\kf44}visible.
-Dialogue: 0,0:04:36.60,0:04:39.44,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf28}Each {\kf28}step {\kf28}gets {\kf23}one {\kf28}job, {\kf11}a {\kf34}clear {\kf40}input, {\kf23}and {\kf17}an
-Dialogue: 0,0:04:39.44,0:04:40.76,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf38}output {\kf22}you {\kf22}can {\kf38}check.
-Dialogue: 0,0:04:41.36,0:04:43.46,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf22}And {\kf22}you {\kf55}decompose {\kf27}when {\kf22}the {\kf27}work {\kf16}is
-Dialogue: 0,0:04:43.46,0:04:45.73,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf72}multi-stage, {\kf50}numeric, {\kf16}or {\kf72}high-stakes.
+Dialogue: 0,0:00:05.18,0:00:07.65,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf37}That's {\kf26}what {\kf42}happens {\kf26}when {\kf21}you {\kf21}ask {\kf37}Claude {\kf16}to
+Dialogue: 0,0:00:07.65,0:00:10.23,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf42}analyse {\kf11}a {\kf42}quarter {\kf16}of {\kf37}market {\kf26}data {\kf21}and {\kf42}propose
+Dialogue: 0,0:00:10.23,0:00:11.76,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf62}strategies, {\kf21}all {\kf16}in {\kf21}one {\kf21}go.
+Dialogue: 0,0:00:12.36,0:00:13.37,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf23}Here's {\kf20}where {\kf20}we're {\kf30}heading:
+Dialogue: 0,0:00:14.03,0:00:16.69,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf21}the {\kf26}same {\kf42}request {\kf16}as {\kf26}five {\kf31}small {\kf36}steps, {\kf26}each {\kf21}one
+Dialogue: 0,0:00:16.69,0:00:17.27,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf53}checkable.
+Dialogue: 0,0:00:17.85,0:00:20.31,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf15}By {\kf20}the {\kf20}end {\kf15}of {\kf25}this {\kf40}lesson, {\kf35}you'll {\kf15}be {\kf25}able {\kf15}to
+Dialogue: 0,0:00:20.31,0:00:22.88,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf30}break {\kf20}any {\kf20}big {\kf45}business {\kf40}request {\kf25}into {\kf10}a {\kf30}chain {\kf15}of
+Dialogue: 0,0:00:22.88,0:00:25.46,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf30}steps {\kf25}that {\kf35}Claude {\kf25}gets {\kf35}right, {\kf20}and {\kf25}that {\kf20}you {\kf20}can
+Dialogue: 0,0:00:25.46,0:00:25.85,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf36}verify.
+Dialogue: 0,0:00:26.45,0:00:27.18,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf41}Chapter {\kf26}one.
+Dialogue: 0,0:00:27.92,0:00:29.22,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf27}Spot {\kf22}the {\kf38}hidden {\kf32}jobs.
+Dialogue: 0,0:00:29.82,0:00:31.62,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf30}Here's {\kf8}a {\kf30}prompt {\kf21}many {\kf13}of {\kf13}us {\kf21}have {\kf30}typed:
+Dialogue: 0,0:00:32.25,0:00:35.27,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf50}analyse {\kf25}our {\kf19}Q3 {\kf44}market {\kf31}data {\kf25}and {\kf50}propose {\kf31}five
+Dialogue: 0,0:00:35.27,0:00:36.04,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf71}strategies.
+Dialogue: 0,0:00:36.62,0:00:38.95,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf15}It {\kf30}looks {\kf25}like {\kf20}one {\kf45}request, {\kf20}but {\kf15}it {\kf30}hides {\kf15}at
+Dialogue: 0,0:00:38.95,0:00:39.84,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf29}least {\kf24}five {\kf29}jobs:
+Dialogue: 0,0:00:40.42,0:00:42.92,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf26}read {\kf21}the {\kf31}data, {\kf26}spot {\kf21}the {\kf42}trends, {\kf42}explain {\kf21}the
+Dialogue: 0,0:00:42.92,0:00:45.12,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf42}causes, {\kf47}generate {\kf36}ideas, {\kf21}and {\kf26}rank {\kf31}them.
+Dialogue: 0,0:00:45.70,0:00:48.19,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf30}Asked {\kf15}in {\kf20}one {\kf41}breath, {\kf20}the {\kf30}model {\kf20}has {\kf15}to {\kf35}juggle
+Dialogue: 0,0:00:48.19,0:00:49.32,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf20}all {\kf15}of {\kf25}them {\kf15}at {\kf29}once.
+Dialogue: 0,0:00:49.89,0:00:52.23,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf22}The {\kf32}usual {\kf38}result {\kf16}is {\kf43}generic {\kf64}strategies,
+Dialogue: 0,0:00:52.23,0:00:54.87,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf43}skipped {\kf38}steps, {\kf16}or {\kf43}numbers {\kf27}that {\kf27}were {\kf32}never {\kf16}in
+Dialogue: 0,0:00:54.87,0:00:55.41,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf20}the {\kf29}data.
+Dialogue: 0,0:00:56.01,0:00:58.25,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf29}Chain {\kf14}of {\kf38}thought {\kf29}means {\kf34}asking {\kf19}the {\kf29}model {\kf14}to
+Dialogue: 0,0:00:58.25,0:01:00.55,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf29}write {\kf19}out {\kf19}its {\kf48}reasoning {\kf34}before {\kf14}it {\kf29}gives {\kf19}the
+Dialogue: 0,0:01:00.55,0:01:00.92,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf34}answer.
+Dialogue: 0,0:01:01.51,0:01:03.92,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf25}Each {\kf25}step {\kf15}is {\kf15}on {\kf20}the {\kf29}page, {\kf15}so {\kf29}later {\kf29}steps {\kf20}can
+Dialogue: 0,0:01:03.92,0:01:06.27,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf29}build {\kf15}on {\kf39}earlier {\kf29}ones, {\kf20}and {\kf20}you {\kf20}can {\kf25}read {\kf20}the
+Dialogue: 0,0:01:06.27,0:01:08.73,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf49}reasoning {\kf15}to {\kf20}see {\kf39}exactly {\kf29}where {\kf15}it {\kf25}went {\kf34}wrong.
+Dialogue: 0,0:01:09.31,0:01:11.99,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf28}Same {\kf39}model, {\kf28}same {\kf34}data, {\kf22}but {\kf28}more {\kf17}of {\kf22}the {\kf28}work
+Dialogue: 0,0:01:11.99,0:01:14.67,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf45}happens {\kf22}out {\kf34}loud, {\kf34}which {\kf45}usually {\kf34}means {\kf34}fewer
+Dialogue: 0,0:01:14.67,0:01:16.54,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf39}errors {\kf17}on {\kf61}multi-step {\kf55}problems.
+Dialogue: 0,0:01:17.14,0:01:19.37,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf26}Task {\kf74}decomposition {\kf32}works {\kf21}one {\kf32}level {\kf21}up.
+Dialogue: 0,0:01:19.97,0:01:22.43,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf41}Instead {\kf15}of {\kf20}one {\kf36}prompt {\kf31}doing {\kf61}everything, {\kf20}you
+Dialogue: 0,0:01:22.43,0:01:24.54,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf31}break {\kf20}the {\kf41}project {\kf26}into {\kf36}small, {\kf41}ordered
+Dialogue: 0,0:01:24.54,0:01:25.11,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf52}sub-tasks.
+Dialogue: 0,0:01:25.68,0:01:28.30,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf26}Each {\kf21}one {\kf21}has {\kf10}a {\kf31}clear {\kf37}input, {\kf10}a {\kf37}single {\kf26}job, {\kf21}and
+Dialogue: 0,0:01:28.30,0:01:29.18,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf10}a {\kf30}clear {\kf40}output.
+Dialogue: 0,0:01:29.73,0:01:32.25,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf29}Chain {\kf15}of {\kf39}thought {\kf44}improves {\kf20}the {\kf49}reasoning {\kf34}inside
+Dialogue: 0,0:01:32.25,0:01:32.64,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf9}a {\kf26}step.
+Dialogue: 0,0:01:33.26,0:01:35.86,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf74}Decomposition {\kf48}improves {\kf21}the {\kf53}structure {\kf42}between
+Dialogue: 0,0:01:35.86,0:01:36.22,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf32}steps.
+Dialogue: 0,0:01:36.79,0:01:37.74,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf34}You'll {\kf24}want {\kf29}both.
+Dialogue: 0,0:01:38.33,0:01:38.94,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf55}Takeaway:
+Dialogue: 0,0:01:39.69,0:01:42.49,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf16}if {\kf11}a {\kf44}request {\kf33}hides {\kf44}several {\kf33}jobs, {\kf27}give {\kf27}each {\kf22}job
+Dialogue: 0,0:01:42.49,0:01:43.29,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf21}its {\kf21}own {\kf31}step.
+Dialogue: 0,0:01:43.89,0:01:44.66,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf44}Chapter {\kf27}two.
+Dialogue: 0,0:01:45.34,0:01:46.92,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf27}Turn {\kf21}one {\kf37}prompt {\kf27}into {\kf32}five.
+Dialogue: 0,0:01:47.52,0:01:48.67,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf27}Here's {\kf16}the {\kf27}before {\kf35}version:
+Dialogue: 0,0:01:49.33,0:01:52.04,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf24}one {\kf49}prompt, {\kf24}the {\kf18}Q3 {\kf30}data {\kf43}pasted {\kf24}in, {\kf24}and {\kf12}a
+Dialogue: 0,0:01:52.04,0:01:53.93,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf48}request {\kf24}for {\kf30}five {\kf72}strategies.
+Dialogue: 0,0:01:54.53,0:01:55.53,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf17}You {\kf13}do {\kf17}get {\kf13}an {\kf33}answer.
+Dialogue: 0,0:01:56.18,0:01:58.74,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf20}But {\kf20}you {\kf30}can't {\kf25}tell {\kf30}which {\kf40}numbers {\kf25}came {\kf25}from {\kf20}the
+Dialogue: 0,0:01:58.74,0:02:01.29,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf30}data, {\kf20}why {\kf30}these {\kf25}five {\kf25}were {\kf40}chosen, {\kf15}or {\kf30}where {\kf20}the
+Dialogue: 0,0:02:01.29,0:02:02.18,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf48}reasoning {\kf33}broke.
+Dialogue: 0,0:02:02.78,0:02:03.99,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf19}Now {\kf19}the {\kf29}after {\kf43}version.
+Dialogue: 0,0:02:04.63,0:02:05.25,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf28}Step {\kf28}one:
+Dialogue: 0,0:02:05.97,0:02:08.24,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf36}extract {\kf18}the {\kf18}key {\kf41}metrics, {\kf18}and {\kf27}quote {\kf18}the {\kf32}source
+Dialogue: 0,0:02:08.24,0:02:08.50,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf23}rows.
+Dialogue: 0,0:02:09.08,0:02:09.76,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf31}Step {\kf31}two:
+Dialogue: 0,0:02:10.48,0:02:11.95,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf22}find {\kf17}the {\kf26}three {\kf35}biggest {\kf35}trends.
+Dialogue: 0,0:02:12.53,0:02:13.23,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf27}Step {\kf37}three:
+Dialogue: 0,0:02:13.91,0:02:15.88,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf36}explain {\kf18}the {\kf32}likely {\kf27}cause {\kf14}of {\kf23}each {\kf32}trend.
+Dialogue: 0,0:02:16.49,0:02:17.18,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf29}Step {\kf34}four:
+Dialogue: 0,0:02:17.90,0:02:20.68,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf61}brainstorm {\kf22}ten {\kf50}strategy {\kf45}options {\kf28}tied {\kf17}to {\kf33}those
+Dialogue: 0,0:02:20.68,0:02:21.11,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf39}causes.
+Dialogue: 0,0:02:21.68,0:02:22.41,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf30}Step {\kf36}five:
+Dialogue: 0,0:02:23.07,0:02:25.58,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf30}score {\kf25}them {\kf15}on {\kf35}impact {\kf20}and {\kf40}effort, {\kf20}and {\kf25}pick {\kf20}the
+Dialogue: 0,0:02:25.58,0:02:26.14,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf23}best {\kf28}five.
+Dialogue: 0,0:02:26.71,0:02:29.04,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf29}Every {\kf34}output {\kf39}becomes {\kf19}the {\kf24}next {\kf34}step's {\kf34}input.
+Dialogue: 0,0:02:29.64,0:02:30.68,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf48}Phrasing {\kf48}matters.
+Dialogue: 0,0:02:31.31,0:02:33.55,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf33}Plain, {\kf29}think {\kf24}step {\kf14}by {\kf29}step, {\kf29}helps {\kf10}a {\kf38}little.
+Dialogue: 0,0:02:34.17,0:02:35.77,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf30}Better {\kf13}is {\kf13}to {\kf26}spell {\kf17}out {\kf17}the {\kf30}steps:
+Dialogue: 0,0:02:36.41,0:02:38.50,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf24}first {\kf12}do {\kf24}this, {\kf20}then {\kf24}that, {\kf20}then {\kf16}the {\kf20}next {\kf28}thing.
+Dialogue: 0,0:02:39.20,0:02:40.55,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf20}Best {\kf16}for {\kf29}review {\kf12}is {\kf45}structure.
+Dialogue: 0,0:02:41.22,0:02:43.66,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf23}Ask {\kf40}Claude {\kf17}to {\kf23}put {\kf23}its {\kf58}reasoning {\kf40}inside
+Dialogue: 0,0:02:43.66,0:02:46.30,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf52}thinking {\kf29}tags {\kf23}and {\kf23}the {\kf35}final {\kf40}result {\kf40}inside
+Dialogue: 0,0:02:46.30,0:02:47.08,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf38}answer {\kf33}tags.
+Dialogue: 0,0:02:47.64,0:02:49.96,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf19}Now {\kf19}you {\kf19}can {\kf23}read {\kf19}the {\kf28}work, {\kf19}and {\kf23}your {\kf23}code {\kf14}or {\kf9}a
+Dialogue: 0,0:02:49.96,0:02:51.97,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf46}colleague {\kf18}can {\kf23}pull {\kf18}out {\kf23}just {\kf18}the {\kf37}answer.
+Dialogue: 0,0:02:52.57,0:02:55.14,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf21}For {\kf36}bigger {\kf51}projects, {\kf21}run {\kf26}each {\kf26}step {\kf15}as {\kf21}its {\kf21}own
+Dialogue: 0,0:02:55.14,0:02:57.13,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf36}prompt {\kf20}and {\kf25}pass {\kf20}the {\kf36}output {\kf46}forward.
+Dialogue: 0,0:02:57.75,0:02:59.02,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf26}That's {\kf26}called {\kf26}prompt {\kf37}chaining.
+Dialogue: 0,0:02:59.65,0:03:02.33,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf43}Between {\kf32}steps {\kf21}you {\kf21}can {\kf32}check {\kf21}the {\kf43}result, {\kf21}fix {\kf11}a
+Dialogue: 0,0:03:02.33,0:03:04.59,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf43}mistake {\kf37}early, {\kf16}or {\kf32}rerun {\kf27}just {\kf21}one {\kf32}step.
+Dialogue: 0,0:03:05.19,0:03:07.64,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf15}If {\kf26}step {\kf20}two {\kf31}found {\kf20}the {\kf31}wrong {\kf41}trends, {\kf20}you {\kf20}fix
+Dialogue: 0,0:03:07.64,0:03:09.81,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf26}step {\kf26}two, {\kf20}not {\kf20}the {\kf31}whole {\kf46}strategy {\kf31}deck.
+Dialogue: 0,0:03:10.41,0:03:11.02,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf55}Takeaway:
+Dialogue: 0,0:03:11.79,0:03:14.10,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf25}make {\kf20}the {\kf49}reasoning {\kf44}visible, {\kf20}and {\kf30}check {\kf25}each
+Dialogue: 0,0:03:14.10,0:03:16.09,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf34}output {\kf34}before {\kf20}the {\kf25}next {\kf25}step {\kf25}uses {\kf20}it.
+Dialogue: 0,0:03:16.69,0:03:17.50,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf39}Chapter {\kf35}three.
+Dialogue: 0,0:03:18.19,0:03:19.53,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf53}Decompose {\kf16}it {\kf53}yourself.
+Dialogue: 0,0:03:20.13,0:03:21.18,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf27}Pause {\kf18}the {\kf27}video {\kf23}now.
+Dialogue: 0,0:03:21.83,0:03:22.79,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf28}Take {\kf28}this {\kf33}task:
+Dialogue: 0,0:03:23.44,0:03:25.66,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf22}plan {\kf17}the {\kf30}launch {\kf13}of {\kf9}a {\kf17}new {\kf35}product {\kf22}next {\kf39}quarter.
+Dialogue: 0,0:03:26.30,0:03:27.81,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf29}Write {\kf24}four {\kf14}to {\kf19}six {\kf52}sub-tasks.
+Dialogue: 0,0:03:28.41,0:03:30.99,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf21}For {\kf26}each {\kf26}one, {\kf26}note {\kf21}its {\kf36}input, {\kf21}its {\kf41}output, {\kf21}and
+Dialogue: 0,0:03:30.99,0:03:33.10,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf20}how {\kf31}you'd {\kf31}check {\kf26}that {\kf36}output {\kf15}is {\kf36}right.
+Dialogue: 0,0:03:33.69,0:03:35.94,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf25}Then {\kf30}write {\kf20}the {\kf34}prompt {\kf20}for {\kf25}step {\kf25}one, {\kf30}using
+Dialogue: 0,0:03:35.94,0:03:37.65,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf44}explicit {\kf64}step-by-step {\kf49}phrasing.
+Dialogue: 0,0:03:38.27,0:03:40.45,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf22}Give {\kf40}yourself {\kf22}five {\kf40}minutes, {\kf22}then {\kf27}press {\kf27}play.
+Dialogue: 0,0:03:41.05,0:03:42.54,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf34}Here's {\kf20}one {\kf44}possible {\kf39}answer.
+Dialogue: 0,0:03:43.21,0:03:45.08,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf29}Define {\kf17}the {\kf38}audience {\kf17}and {\kf17}the {\kf29}launch {\kf25}goal.
+Dialogue: 0,0:03:45.71,0:03:46.85,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf24}Scan {\kf19}the {\kf62}competitors.
+Dialogue: 0,0:03:47.48,0:03:49.56,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf27}Write {\kf18}the {\kf54}positioning {\kf18}and {\kf18}the {\kf18}key {\kf40}message.
+Dialogue: 0,0:03:50.13,0:03:51.89,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf30}Choose {\kf38}channels {\kf17}and {\kf26}split {\kf17}the {\kf34}budget.
+Dialogue: 0,0:03:52.57,0:03:54.64,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf22}Then {\kf26}build {\kf17}the {\kf39}timeline {\kf17}and {\kf22}list {\kf17}the {\kf30}risks.
+Dialogue: 0,0:03:55.20,0:03:57.23,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf26}Yours {\kf17}may {\kf22}look {\kf48}different, {\kf17}and {\kf30}that's {\kf26}fine.
+Dialogue: 0,0:03:57.83,0:03:58.44,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf55}Takeaway:
+Dialogue: 0,0:03:59.19,0:04:01.99,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf33}every {\kf27}step {\kf27}gets {\kf22}one {\kf27}job, {\kf22}and {\kf16}an {\kf38}output {\kf22}you {\kf22}can
+Dialogue: 0,0:04:01.99,0:04:02.36,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf33}check.
+Dialogue: 0,0:04:02.96,0:04:03.75,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf41}Chapter {\kf31}four.
+Dialogue: 0,0:04:04.47,0:04:05.65,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf25}Know {\kf25}when {\kf15}to {\kf20}use {\kf20}it.
+Dialogue: 0,0:04:06.25,0:04:08.95,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf56}Decompose {\kf28}when {\kf23}the {\kf28}task {\kf23}has {\kf45}several {\kf45}stages,
+Dialogue: 0,0:04:08.95,0:04:11.27,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf50}involves {\kf50}numbers, {\kf39}drives {\kf17}an {\kf56}important
+Dialogue: 0,0:04:11.27,0:04:14.04,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf56}decision, {\kf17}or {\kf28}when {\kf45}someone {\kf34}needs {\kf17}to {\kf34}audit {\kf23}the
+Dialogue: 0,0:04:14.04,0:04:14.67,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf57}reasoning.
+Dialogue: 0,0:04:15.27,0:04:17.96,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf27}Keep {\kf16}it {\kf16}to {\kf22}one {\kf38}prompt {\kf22}for {\kf38}simple {\kf44}lookups {\kf22}and
+Dialogue: 0,0:04:17.96,0:04:20.52,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf33}quick {\kf55}rewrites, {\kf33}where {\kf33}extra {\kf33}steps {\kf27}only {\kf22}add
+Dialogue: 0,0:04:20.52,0:04:21.37,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf26}time {\kf21}and {\kf31}cost.
+Dialogue: 0,0:04:21.97,0:04:22.58,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf55}Takeaway:
+Dialogue: 0,0:04:23.37,0:04:25.96,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf53}decompose {\kf26}when {\kf21}the {\kf26}work {\kf21}has {\kf42}stages, {\kf48}numbers,
+Dialogue: 0,0:04:25.96,0:04:26.55,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf15}or {\kf39}stakes.
+Dialogue: 0,0:04:27.15,0:04:28.57,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf53}Otherwise, {\kf24}keep {\kf14}it {\kf39}simple.
+Dialogue: 0,0:04:29.17,0:04:29.99,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf35}Let's {\kf40}recap.
+Dialogue: 0,0:04:30.67,0:04:32.26,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf21}Big {\kf42}prompts {\kf26}hide {\kf26}many {\kf31}jobs.
+Dialogue: 0,0:04:32.87,0:04:35.30,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf31}Chain {\kf15}of {\kf41}thought {\kf20}and {\kf46}explicit {\kf46}phrasing {\kf25}make
+Dialogue: 0,0:04:35.30,0:04:36.32,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf20}the {\kf29}steps {\kf44}visible.
+Dialogue: 0,0:04:36.92,0:04:39.73,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf28}Each {\kf28}step {\kf28}gets {\kf22}one {\kf28}job, {\kf11}a {\kf34}clear {\kf39}input, {\kf22}and {\kf17}an
+Dialogue: 0,0:04:39.73,0:04:41.04,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf38}output {\kf22}you {\kf22}can {\kf38}check.
+Dialogue: 0,0:04:41.64,0:04:43.73,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf22}And {\kf22}you {\kf55}decompose {\kf27}when {\kf22}the {\kf27}work {\kf16}is
+Dialogue: 0,0:04:43.73,0:04:46.01,Cap,,0,0,0,,{\fad(140,90)\fscx92\fscy92\t(0,160,\fscx100\fscy100)}{\kf72}multi-stage, {\kf50}numeric, {\kf16}or {\kf72}high-stakes.

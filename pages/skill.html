@@ -85,7 +85,7 @@ a { color: var(--accent); }
           <tr><td>2 Objective</td><td>"After this, the viewer can ___"; 3–5 chapters as Tell, Show, Do, Apply</td><td>one sentence, outcome-named chapters</td></tr>
           <tr><td>3 Script</td><td>scene JSON: hook, preview, chapter cards, ideas, takeaways, recap, assignment</td><td>JSON loads</td></tr>
           <tr><td>4 Diagrams</td><td><code>tools/make_svgs.py</code>: UML with <code>data-emoji</code> colour emoji</td><td>every SVG rasterises</td></tr>
-          <tr><td>5 Backgrounds</td><td>Mac FLUX one-liner, or CPU art on the Linux VM</td><td>one PNG per planned scene</td></tr>
+          <tr><td>5 Backgrounds</td><td>On an Apple Silicon Mac: <code>tools/gen_images.py</code> (FLUX.2 Klein), or the Mac one-liner; CPU art on the Linux VM</td><td>one PNG per planned scene</td></tr>
           <tr><td>6 Build</td><td><code>./build.sh</code>: Kokoro → SVG → images → render → captions, loudness, QA</td><td><code>qa.json</code> pass is true</td></tr>
           <tr><td>7 Look</td><td>pull 4–6 frames from the final video and read them</td><td>no overlaps, captions small, emoji in colour</td></tr>
           <tr><td>8 Publish</td><td><code>tools/build_site.sh --publish</code>; workflow deploys <code>site/</code> and tests it live</td><td>workflow green, live tests OK</td></tr>
