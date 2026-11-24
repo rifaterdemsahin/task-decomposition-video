@@ -5,7 +5,7 @@
     "motif": "burst",
     "seed": 101,
     "engine": "Pillow procedural (CPU)",
-    "seconds": 7.53,
+    "seconds": 9.62,
     "file": "01.png"
   },
   {
@@ -14,7 +14,7 @@
     "motif": "grid",
     "seed": 103,
     "engine": "Pillow procedural (CPU)",
-    "seconds": 7.67,
+    "seconds": 9.54,
     "file": "03.png"
   },
   {
@@ -23,7 +23,7 @@
     "motif": "tangle",
     "seed": 104,
     "engine": "Pillow procedural (CPU)",
-    "seconds": 6.8,
+    "seconds": 7.05,
     "file": "04.png"
   },
   {
@@ -32,7 +32,7 @@
     "motif": "chain",
     "seed": 105,
     "engine": "Pillow procedural (CPU)",
-    "seconds": 7.73,
+    "seconds": 7.65,
     "file": "05.png"
   },
   {
@@ -41,7 +41,7 @@
     "motif": "chain",
     "seed": 108,
     "engine": "Pillow procedural (CPU)",
-    "seconds": 7.42,
+    "seconds": 7.35,
     "file": "08.png"
   },
   {
@@ -50,7 +50,7 @@
     "motif": "tree",
     "seed": 114,
     "engine": "Pillow procedural (CPU)",
-    "seconds": 8.13,
+    "seconds": 8.03,
     "file": "14.png"
   },
   {
@@ -59,7 +59,7 @@
     "motif": "burst",
     "seed": 118,
     "engine": "Pillow procedural (CPU)",
-    "seconds": 7.8,
+    "seconds": 7.87,
     "file": "18.png"
   },
   {

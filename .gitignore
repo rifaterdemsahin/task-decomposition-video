@@ -5,3 +5,4 @@ __pycache__/
 video/out/*-raw.mp4
 video/out/*-raw.mp4.timeline.json
 video/out/*-draft.mp4
+video/out/*.mp4

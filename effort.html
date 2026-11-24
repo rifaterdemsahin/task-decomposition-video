@@ -1,0 +1,136 @@
+<title>Task Decomposition Effort</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: a production log — headline numbers, a clock-time run sheet, where the work went, problems solved, then what it would take next time. */
+:root {
+  --bg: #F3F5F9; --surface: #FFFFFF; --fg: #141A26; --muted: #5B6578; --line: #DCE1EA;
+  --accent: #2F5BEA; --tint: #E7EDFD; --good: #1F8A4C; --warn: #B7791F; --bad: #C2362B;
+  --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0E121A; --surface: #161C27; --fg: #E8ECF3; --muted: #9AA4B6; --line: #283143;
+  --accent: #7C9BFF; --tint: #18213A; --good: #4CC780; --warn: #E7B158; --bad: #F2776C; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #0E121A; --surface: #161C27; --fg: #E8ECF3; --muted: #9AA4B6; --line: #283143;
+  --accent: #7C9BFF; --tint: #18213A; --good: #4CC780; --warn: #E7B158; --bad: #F2776C; color-scheme: dark; }
+body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 15px; line-height: 1.55; }
+.wrap { max-width: 1080px; margin: 0 auto; padding-block: 32px 56px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 40px; }
+.eyebrow { font: 600 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+h1 { font: 800 clamp(28px, 4vw, 40px)/1.1 var(--display); margin: 10px 0 12px; text-wrap: balance; }
+h2 { font: 800 22px/1.2 var(--display); margin: 0 0 14px; text-wrap: balance; }
+p { margin: 0; max-width: 70ch; }
+.lead { color: var(--muted); }
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 820px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.stat { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; min-width: 0; }
+.stat .n { font: 800 30px/1.1 var(--display); font-variant-numeric: tabular-nums; color: var(--accent); }
+.stat .l { font-size: 13px; color: var(--muted); }
+.runsheet { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; border-left: 2px solid var(--line); }
+.runsheet li { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 14px; padding: 10px 0 10px 16px; position: relative; }
+.runsheet li::before { content: ""; position: absolute; left: -6px; top: 17px; width: 10px; height: 10px; border-radius: 50%; background: var(--surface); border: 2px solid var(--accent); }
+.runsheet li.user::before { background: var(--accent); }
+.runsheet time { font: 600 13px/1.6 var(--mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+.runsheet b { font-weight: 600; }
+.runsheet span { color: var(--muted); font-size: 13.5px; display: block; }
+.legend { font-size: 13px; color: var(--muted); margin-top: 8px; }
+.scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; min-width: 560px; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; font-size: 14px; }
+th { font: 600 12px/1.2 var(--mono); letter-spacing: .05em; text-transform: uppercase; color: var(--muted); background: var(--tint); }
+td.num { font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+code { font: 400 13px var(--mono); }
+.grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 760px) { .grid2 { grid-template-columns: minmax(0, 1fr); } }
+.prob { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; min-width: 0; }
+.prob h3 { font: 600 14.5px/1.35 var(--body); margin: 0 0 6px; }
+.prob p { font-size: 13.5px; color: var(--muted); }
+.prob p + p { margin-top: 6px; color: var(--fg); }
+.prob p + p::before { content: "Fix: "; font-weight: 600; color: var(--good); }
+footer { color: var(--muted); font-size: 13px; }
+a { color: var(--accent); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">Claude Associate course · Skool lesson · 24 Nov 2026</span>
+    <h1>What it took to make the Task Decomposition video</h1>
+    <p class="lead">A 4 min 55 s narrated lesson, built in about 45 minutes of wall-clock time on one CPU-only Linux VM. No cloud voice, no cloud image model, no video editor. Every number below was measured during this run.</p>
+  </header>
+
+  <section>
+    <div class="stats">
+      <div class="stat"><div class="n">42 min</div><div class="l">request to finished video (16:17 → 16:59)</div></div>
+      <div class="stat"><div class="n">4</div><div class="l">full renders, 6–10.5 min each on CPU</div></div>
+      <div class="stat"><div class="n">712</div><div class="l">lines of new tooling, plus a 25-scene script</div></div>
+      <div class="stat"><div class="n">797</div><div class="l">words of narration, 105 caption cues</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Run sheet</h2>
+    <ol class="runsheet">
+      <li class="user"><time>16:17</time><div><b>Brief arrives</b><span>Topic, simpligen skill link, Tell-Show-Do-Apply design, local Kokoro voice and images.</span></div></li>
+      <li><time>16:18</time><div><b>Environment check</b><span>Skill read; found no Kokoro, Ollama, GPU, ffmpeg or rsvg on the VM, and 2 GB free disk. LAN scan for services denied.</span></div></li>
+      <li><time>16:20</time><div><b>Toolchain installed</b><span>ffmpeg 5.1, rsvg-convert, Python venv; Kokoro-82M int8 model downloaded (116 MB).</span></div></li>
+      <li><time>16:24</time><div><b>simpligen ported to Linux</b><span>Emoji font fallback, intro icons per scene, intro frames piped to ffmpeg to save disk. Local Kokoro server on :8880.</span></div></li>
+      <li><time>16:26</time><div><b>Script, diagrams, images</b><span>13-scene Tell-Show-Do-Apply script, 8 SVG diagrams, 5 procedural backgrounds. 17/17 tests pass.</span></div></li>
+      <li><time>16:33</time><div><b>Draft 1 rendered</b><span>4 min 24 s video in 369 s. Frame check found 2 title/diagram overlaps.</span></div></li>
+      <li class="user"><time>16:33</time><div><b>Commit, push and research doc requested</b><span>Doc outline published; 9 sources fetched and verified; 8 sections written while the render was fixed.</span></div></li>
+      <li class="user"><time>16:35</time><div><b>edu-film-edit skill pushed to the repo</b><span>Reformatted, installed, and applied: hook, 4 chapters with takeaways, stacked recap, one call to action, hard cuts.</span></div></li>
+      <li><time>16:39</time><div><b>Draft 2 rendering</b><span>25 scenes. Finishing tool written in parallel: voice chain, −14 LUFS, SRT, chapters, QA.</span></div></li>
+      <li class="user"><time>16:42</time><div><b>Code pushed</b><span>Commit <code>67338bc</code>. Kanban board published.</span></div></li>
+      <li><time>16:47</time><div><b>QA on draft 2</b><span>6 of 7 checks pass. Pace 175 words/min, above the 140–170 target.</span></div></li>
+      <li><time>16:49</time><div><b>Pacing fix, final build</b><span>0.3 s pause between sentences, as the skill prescribes; full rebuild with <code>build.sh</code>.</span></div></li>
+      <li><time>16:59</time><div><b>Final video</b><span>4 min 55 s, built in 10 min 28 s. −14.0 LUFS, peak −1.4 dBFS, 0 flashes, 6 chapters. Pace 170.6 words/min, 0.6 over target.</span></div></li>
+      <li class="user"><time>17:00</time><div><b>GitHub Pages deploy</b><span>gh logged in with the token from Azure Key Vault; site pushed to the <code>gh-pages</code> branch.</span></div></li>
+    </ol>
+    <p class="legend">Filled dots mark your messages. Times come from file and commit timestamps on the VM.</p>
+  </section>
+
+  <section>
+    <h2>Where the work went</h2>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Area</th><th>What was built</th><th>Size</th></tr></thead>
+        <tbody>
+          <tr><td>Voice</td><td>Kokoro-82M on CPU behind the Kokoro-FastAPI interface, with sentence pauses</td><td class="num"><code>kokoro_server.py</code> 85 lines</td></tr>
+          <tr><td>Diagrams</td><td>Before/after, decomposition, phrasing ladder, chaining, worksheet, sample answer, when-to-use, 4-step recap reveal</td><td class="num">12 SVGs · 207 lines</td></tr>
+          <tr><td>Background art</td><td>Procedural node-network images on CPU, one motif per lesson idea</td><td class="num">8 images · ~7 s each · 150 lines</td></tr>
+          <tr><td>Renderer</td><td>simpligen changes for Linux, measured text wrap, chapters, hard cuts, timeline</td><td class="num">+62 / −25 lines</td></tr>
+          <tr><td>Finishing and QA</td><td>Voice chain, room tone, two-pass loudnorm, SRT, chapters, description, automated checks</td><td class="num"><code>edu_finish.py</code> 187 lines</td></tr>
+          <tr><td>Script</td><td>25 scenes: hook, 4 chapters with takeaways, recap, practice</td><td class="num">797 words</td></tr>
+          <tr><td>Skill</td><td>Formatting restored and installed; Linux route documented</td><td class="num">151 lines</td></tr>
+          <tr><td>Research</td><td>Doc with 6 papers and 3 Anthropic pages, worked example, quiz</td><td class="num">8 sections</td></tr>
+          <tr><td>Build and deploy</td><td>One command from model download to QA report; one to publish GitHub Pages</td><td class="num"><code>build.sh</code> + <code>build_site.sh</code> 56 lines</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Problems hit along the way</h2>
+    <div class="grid2">
+      <div class="prob"><h3>The skill assumes a Mac</h3><p>Kokoro in Docker, mflux on Apple Silicon, Apple emoji font. None available on this VM.</p><p>Kokoro via kokoro-onnx on CPU with the same API; Noto emoji; procedural CPU images.</p></div>
+      <div class="prob"><h3>2 GB of free disk</h3><p>The intro wrote a PNG per frame (~4 MB each at 1080p), about 1 GB for one intro.</p><p>Frames piped straight into ffmpeg; nothing written per frame.</p></div>
+      <div class="prob"><h3>Titles ran into diagrams</h3><p>Wrapping by character count ignored real glyph widths.</p><p>Wrap by measured pixel width with the actual font.</p></div>
+      <div class="prob"><h3>Diamond artefacts in backgrounds</h3><p>Rotating a gradient left black corners.</p><p>Diagonal built from a horizontal and a vertical gradient.</p></div>
+      <div class="prob"><h3>skill.md lost its markdown</h3><p>Frontmatter mid-file; headings, table, code and checklist flattened.</p><p>Rebuilt structure, same content, installed under <code>.claude/skills</code>.</p></div>
+      <div class="prob"><h3>Narration too fast</h3><p>QA measured 175 words/min against the 140–170 target.</p><p>0.3 s pauses at sentence boundaries brought it to 170.6; a 0.5 s pause in the next build clears it.</p></div>
+      <div class="prob"><h3>Anthropic docs moved</h3><p>Old chain-of-thought URLs now redirect; extended thinking's budget mode is marked legacy.</p><p>The doc cites the current pages and mentions adaptive thinking.</p></div>
+      <div class="prob"><h3>No git identity on the VM</h3><p>The first commit was refused.</p><p>Identity passed per command; global config left untouched.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Next time</h2>
+    <p>With the pipeline in place, a new lesson is mostly writing: edit the scene JSON and the diagram data, then run <code>./build.sh</code>, about 10 minutes of CPU time per build here. The slow parts were one-off setup and two structural rewrites. On the Mac with FLUX images and a GPU, image generation would cost more time per scene but look richer.</p>
+  </section>
+
+  <footer>Watch: <a href="https://rifaterdemsahin.github.io/task-decomposition-video/">GitHub Pages</a> · Source: <a href="https://github.com/rifaterdemsahin/task-decomposition-video">task-decomposition-video</a> · Board: <a href="https://claude.ai/artifact/JeK93WVKQAui3G8Lwrt8se">Task Decomposition Board</a> · Research: <a href="https://claude.ai/artifact/CLrGTg5UoMx7UdJHjoMYNg">notes</a></footer>
+</div>

@@ -7,6 +7,24 @@ A Claude Associate course lesson for the Skool community, made fully locally wit
 **Learning objective:** after this, the viewer can break a big business request into a chain of
 checkable steps that Claude reasons through one at a time.
 
+## Links
+
+| What | Link |
+| --- | --- |
+| Watch the lesson (GitHub Pages) | https://rifaterdemsahin.github.io/task-decomposition-video/ |
+| Video file | https://rifaterdemsahin.github.io/task-decomposition-video/task-decomposition.mp4 |
+| Captions (SRT) | https://rifaterdemsahin.github.io/task-decomposition-video/task-decomposition.srt |
+| QA report | https://rifaterdemsahin.github.io/task-decomposition-video/task-decomposition.qa.json |
+| Production board (Pages) | https://rifaterdemsahin.github.io/task-decomposition-video/kanban.html |
+| Effort report (Pages) | https://rifaterdemsahin.github.io/task-decomposition-video/effort.html |
+| Research notes (Claude doc) | https://claude.ai/artifact/CLrGTg5UoMx7UdJHjoMYNg |
+| Production board (Claude artifact) | https://claude.ai/artifact/JeK93WVKQAui3G8Lwrt8se |
+| Effort report (Claude artifact) | https://claude.ai/artifact/54ereVfN9t1hiQnTbhtLLj |
+| Source code | https://github.com/rifaterdemsahin/task-decomposition-video |
+| Renderer upstream | https://github.com/rifaterdemsahin/simpligen |
+
+The Claude links are private to the owner until shared from each page's Share menu.
+
 ## Output
 
 | File | What it is |
@@ -53,6 +71,15 @@ Steps it runs:
 - Slide text wrapped by measured pixel width, so titles never run into diagrams
 - Intro icons settable per scene (`icons`), intro frames piped to ffmpeg (no PNG per frame on disk)
 - `chapter` scene field, project-level `fade` (0 = hard cuts), per-scene `.timeline.json` output
+
+## Publish to GitHub Pages
+
+```bash
+tools/build_site.sh --publish
+```
+
+Copies the video, captions (SRT + VTT), QA report, board and effort pages into `site/`, commits
+it on `main`, and pushes `site/` to the `gh-pages` branch, which GitHub Pages serves.
 
 ## Edit the lesson
 

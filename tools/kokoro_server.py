@@ -19,12 +19,16 @@ import time
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
+import re
+
+import numpy as np
 import soundfile as sf
 from kokoro_onnx import Kokoro
 
 ROOT = Path(__file__).resolve().parent.parent
 MODEL_DIR = Path(os.environ.get("KOKORO_DIR", ROOT / "models" / "kokoro"))
 PORT = int(os.environ.get("KOKORO_PORT", "8880"))
+PAUSE = float(os.environ.get("KOKORO_PAUSE", "0.3"))  # seconds of silence between sentences
 
 print(f"loading Kokoro from {MODEL_DIR} ...", flush=True)
 t0 = time.perf_counter()
@@ -55,8 +59,15 @@ class Handler(BaseHTTPRequestHandler):
         if voice not in VOICES:
             return self._send(400, f"unknown voice {voice}".encode(), "text/plain")
         t0 = time.perf_counter()
-        samples, rate = KOKORO.create(req["input"], voice=voice, speed=float(req.get("speed", 1.0)),
-                                      lang=req.get("lang", "en-gb" if voice[0] == "b" else "en-us"))
+        lang = req.get("lang", "en-gb" if voice[0] == "b" else "en-us")
+        speed = float(req.get("speed", 1.0))
+        # edu-film-edit: if the pace runs fast, add pauses at idea boundaries instead of slowing
+        # the voice. One sentence at a time, joined with PAUSE seconds of silence.
+        parts, rate = [], 24000
+        for sent in [s for s in re.split(r"(?<=[.!?:])\s+", req["input"].strip()) if s]:
+            audio, rate = KOKORO.create(sent, voice=voice, speed=speed, lang=lang)
+            parts += [audio, np.zeros(int(rate * PAUSE), dtype=audio.dtype)]
+        samples = np.concatenate(parts[:-1]) if parts else np.zeros(1, dtype=np.float32)
         buf = io.BytesIO()
         sf.write(buf, samples, rate, format="WAV")
         audio_s = len(samples) / rate
